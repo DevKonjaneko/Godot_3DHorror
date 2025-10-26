@@ -1,4 +1,5 @@
 extends Control #InventorySlot v1.0
+#res://Inventory/InventorySlot.gd
 class_name InventorySlot
 
 signal OnItemEquiped(SlotID)

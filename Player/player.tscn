@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dcb2gmc4jn4eg" path="res://UI/mainmenu/pause_menu.tscn" id="10_5htga"]
 [ext_resource type="Texture2D" uid="uid://tmpxjj65ogpa" path="res://Textures/icons/Screenshot 2025-10-26 144817.png" id="12_n471f"]
 [ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="12_o28un"]
-[ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/battery.tscn" id="13_n471f"]
+[ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="13_n471f"]
 [ext_resource type="Script" uid="uid://cxe0qf28btywk" path="res://Player/player_ui.gd" id="16_7emwf"]
 [ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
 

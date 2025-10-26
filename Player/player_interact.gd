@@ -11,13 +11,7 @@ func _physics_process(_delta: float) -> void:
 	if is_colliding():	#เช็คว่า RayCast ชนอะไรอยู่หรือไม่
 		var hit = get_collider()
 		
-		if hit.has_method("read"):
-			interaction_label.text = "[E] Read Note"
-			interaction_label.show()
-			if Input.is_action_just_pressed("Interact"):
-				hit.read()
-				
-		elif hit.name == "door_static":
+		if hit.name == "door_static":
 			# 1. หา Script ของประตู
 			var door_script = hit.get_parent().get_parent().get_parent()
 			# 2. เรียกใช้ function get_interaction_text()

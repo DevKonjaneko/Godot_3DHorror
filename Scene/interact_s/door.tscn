@@ -131,6 +131,7 @@ _data = {
 [node name="door" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
 script = ExtResource("1_f5tmn")
+locked = true
 
 [node name="Door_frame" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_bmqyb")

@@ -1,4 +1,5 @@
 extends Control #InventoryUI v.1.0
+#res://Inventory/InventoryHandler.gd
 class_name InventoryHandler
 @export var PlayerBody : CharacterBody3D
 @export_flags_3d_physics var CollisionMask : int
@@ -7,11 +8,8 @@ class_name InventoryHandler
 @export var InventorySlotPrefab : PackedScene = preload("res://Inventory/InventorySlot.tscn")
 
 func _unhandled_input(_event: InputEvent) -> void:
-	# ย้าย Logic การกดปุ่มมาไว้ที่นี่
 	if Input.is_action_just_pressed("Inventory"):
-		# สลับสถานะการมองเห็น
 		visible = !visible
-		# อัปเดตโหมดของเมาส์ตามสถานะของ UI
 		if visible:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
@@ -20,7 +18,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 var InventorySlots : Array[InventorySlot] = []
-
 var EquippedSlot : int = -1
 
 func _ready():
@@ -95,4 +92,3 @@ func GetWorldMousePosition() -> Vector3:
 		return results["position"] as Vector3 + Vector3(0.0, 0.75, 3.0)
 	else:
 		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.75, 3.0)
-	
