@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://q7tmbvggu68w"]
+
+[ext_resource type="Script" uid="uid://bxurrk8hmb07o" path="res://Scene/note_s/note.gd" id="1_5vdfn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_pwxqg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pk2s"]
+size = Vector3(1, 0.2, 1.5)
+
+[node name="Note" type="Area3D"]
+script = ExtResource("1_5vdfn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -6.556708e-08, 1, 0, -1.5, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_pwxqg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8pk2s")
