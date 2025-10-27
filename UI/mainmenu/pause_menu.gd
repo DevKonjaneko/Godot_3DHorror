@@ -1,4 +1,5 @@
-extends Control
+extends Control #pause_menu v1.0
+#res://UI/mainmenu/pause_menu.gd
 
 func  _ready():
 	hide()

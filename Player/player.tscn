@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=33 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="13_n471f"]
 [ext_resource type="Script" uid="uid://cxe0qf28btywk" path="res://Player/player_ui.gd" id="16_7emwf"]
 [ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
+[ext_resource type="Script" uid="uid://bqxsq5o16d3mv" path="res://Scene/note_s/note_ui.gd" id="18_n471f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -49,7 +50,7 @@ ItemModelPrefab = ExtResource("13_n471f")
 metadata/_custom_type_script = "uid://d1eklw33buvw1"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
-radius = 2.5
+radius = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n471f"]
 bg_color = Color(1, 1, 1, 1)
@@ -127,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_x3vf3")
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraContainer"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.061999977, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.045, 0)
 target_position = Vector3(0, -2, 0)
 collision_mask = 3
 script = ExtResource("3_p5o4e")
@@ -200,6 +201,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="interaction_label" type="Label" parent="player_ui/PlayerUI/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_pisgm")
 theme_override_colors/font_shadow_color = Color(0.8476528, 0.8476528, 0.8476528, 1)
@@ -253,6 +255,7 @@ theme_override_constants/v_separation = 5
 columns = 5
 
 [node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
+visible = false
 material = SubResource("ShaderMaterial_pisgm")
 anchors_preset = 15
 anchor_right = 1.0
@@ -260,6 +263,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="note_ui" type="Control" parent="player_ui/PlayerUI"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_n471f")
+
+[node name="ColorRect" type="ColorRect" parent="player_ui/PlayerUI/note_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.78431374)
+
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/note_ui/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -270.0
+offset_right = 220.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 480.0
+text = "กดเกดเกดเกดเsdfggfdgdf
+กดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdf"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.5
+offset_top = -31.0
+offset_right = 31.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[x] close"
 
 [node name="pause_menu" parent="player_ui/PlayerUI" instance=ExtResource("10_5htga")]
 visible = false

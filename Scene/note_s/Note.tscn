@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://r61bfbf25gcy"]
+
+[ext_resource type="Script" uid="uid://cxj7hyv3u810l" path="res://Scene/note_s/Note.gd" id="1_8golx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vc27g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vc27g"]
+size = Vector3(0.8, 0.025, 0.55)
+
+[node name="Note" type="StaticBody3D"]
+script = ExtResource("1_8golx")
+note_text = "ใส่ข้อความของ Note ที่นี่
+คุณศิ น่ารักมากๆ
+เจ้ อะตอม
+พี่แมคจู๋เล็ก"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.375, 0, 0, 0, 1, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vc27g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vc27g")
