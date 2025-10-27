@@ -77,7 +77,16 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.interact()
 				print("Read Note")
-			
+				
+		elif hit.name == "Door_key":
+			if hit.has_method("on_focus"):
+				hit.on_focus()
+			interaction_label.text = "[E] Pick-up"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.interact()
+				print("Key")
+
 		else: #ถ้าชนกับของอื่น → ให้ซ่อน Label
 			interaction_label.hide()
 			

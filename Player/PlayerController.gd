@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5
 #SoundEffect
 @onready var footstep_walk = $Footstep_Walk
+@onready var footstep_sprint= $Footstep_Sprint
 #Crouching
 var is_crouching = false
 
@@ -52,10 +53,17 @@ func handle_movement():
 	
 	#Footstep Logic
 	if direction and is_on_floor():
-		if not footstep_walk.playing:
-			footstep_walk.play()
+		if is_sprinting:
+			if not footstep_sprint.playing:
+				footstep_sprint.play()
+			footstep_walk.stop()
+		else:
+			if not footstep_walk.playing:
+				footstep_walk.play()
+			footstep_sprint.stop()
 	else:
 		footstep_walk.stop()
+		footstep_sprint.stop()
 
 func handle_gravity(delta):
 	if not is_on_floor():

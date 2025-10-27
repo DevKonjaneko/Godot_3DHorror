@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=13 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://bl0h3mi0qhq4f" path="res://Scene/_main_s/Village.tscn" id="1_c6k8p"]
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/player.tscn" id="2_csiqh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b76niexsnwx45" path="res://UI/effects/transitionscreen.tscn" id="4_mbwnc"]
 [ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="6_csiqh"]
 [ext_resource type="PackedScene" uid="uid://ce6px0mhvkp2e" path="res://Scene/note_s/task_trigger.tscn" id="7_kqf6j"]
+[ext_resource type="PackedScene" uid="uid://1wmf11s0kx41" path="res://Scene/object_s/Door_key.tscn" id="9_1f7mq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -70,3 +71,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736045, 0.6131738, 0.2727
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_csiqh")]
 transform = Transform3D(0.99713516, 0, -0.07564013, 0, 1, 0, 0.07564013, 0, 0.99713516, 3.3195176, 1.7671404, 1.0258665)
+
+[node name="Door_key" parent="." instance=ExtResource("9_1f7mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.782396, 0.21188611, 0.41742682)

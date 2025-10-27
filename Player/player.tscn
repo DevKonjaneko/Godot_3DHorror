@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=34 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
 [ext_resource type="AudioStream" uid="uid://cvveech5nhu3l" path="res://Assets/sounds/Footstep_Walk.mp3" id="2_pisgm"]
 [ext_resource type="Script" uid="uid://cuo8250tj6eca" path="res://Player/fp_camera.gd" id="2_x3vf3"]
 [ext_resource type="Script" uid="uid://d1eklw33buvw1" path="res://Inventory/ItemData.gd" id="3_05jue"]
+[ext_resource type="AudioStream" uid="uid://c8s1bvm5dpik6" path="res://Assets/sounds/Footstep_Sprint.mp3" id="3_7emwf"]
 [ext_resource type="Script" uid="uid://djbk3306m6ehb" path="res://Player/player_interact.gd" id="3_p5o4e"]
 [ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Scene/object_s/TestCube.tscn" id="4_g74hu"]
 [ext_resource type="Script" uid="uid://dtfsqjsb8eskv" path="res://Player/hand.gd" id="5_n471f"]
@@ -115,6 +116,10 @@ script = ExtResource("1_lqs8g")
 stream = ExtResource("2_pisgm")
 volume_db = -17.5
 max_distance = 1500.0
+
+[node name="Footstep_Sprint" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7emwf")
+volume_db = -17.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 gi_mode = 2
@@ -255,7 +260,6 @@ theme_override_constants/v_separation = 5
 columns = 5
 
 [node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
-visible = false
 material = SubResource("ShaderMaterial_pisgm")
 anchors_preset = 15
 anchor_right = 1.0
