@@ -10,9 +10,12 @@ size = Vector3(0.8, 0.025, 0.55)
 [node name="Note" type="StaticBody3D"]
 script = ExtResource("1_8golx")
 note_text = "ใส่ข้อความของ Note ที่นี่
-คุณศิ น่ารักมากๆ
+คุณศิสวยมากๆ
 เจ้ อะตอม
-พี่แมคจู๋เล็ก"
+พี่แมคจู๋เล็ก
+อันดา
+เนเน่"
+font_size = 35
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.375, 0, 0, 0, 1, 0, 0, 0, 0.25, 0, 0, 0)
