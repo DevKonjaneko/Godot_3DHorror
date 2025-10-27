@@ -7,7 +7,7 @@ extends StaticBody3D #Note v1.1
 
 func _ready() -> void:
 	pass
-	
+
 func interact():
 	# หา Player และ note_ui
 	var player = get_tree().current_scene.get_node("PlayerBody")

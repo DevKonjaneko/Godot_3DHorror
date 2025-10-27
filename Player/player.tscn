@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=35 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://cxe0qf28btywk" path="res://Player/player_ui.gd" id="16_7emwf"]
 [ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://bqxsq5o16d3mv" path="res://Scene/note_s/note_ui.gd" id="18_n471f"]
+[ext_resource type="Texture2D" uid="uid://gurwdofi7oat" path="res://Textures/questions/oldpage.png" id="20_hshwv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -134,7 +135,7 @@ script = ExtResource("2_x3vf3")
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraContainer"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.045, 0)
-target_position = Vector3(0, -2, 0)
+target_position = Vector3(0, -3, 0)
 collision_mask = 3
 script = ExtResource("3_p5o4e")
 
@@ -307,14 +308,23 @@ offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Background" type="TextureRect" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_hshwv")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 420.0
 offset_bottom = 480.0
-text = "กดเกดเกดเกดเsdfggfdgdf
-กดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdfกดเกดเกดเกดเsdfggfdgdf"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]

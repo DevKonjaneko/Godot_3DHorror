@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bdoj2c8mwucl"]
 
-[ext_resource type="Texture2D" uid="uid://bmm430rxdtsly" path="res://Assets/glb_models/light/Focus_01.png" id="1_m757d"]
-[ext_resource type="Texture2D" uid="uid://tffjg2s4r1iy" path="res://Assets/glb_models/light/Focus_01_Emissor.png" id="2_0d5nh"]
+[ext_resource type="Texture2D" uid="uid://bmm430rxdtsly" path="res://Assets/glb_models/electric/light/Focus_01.png" id="1_m757d"]
+[ext_resource type="Texture2D" uid="uid://tffjg2s4r1iy" path="res://Assets/glb_models/electric/light/Focus_01_Emissor.png" id="2_0d5nh"]
 
 [resource]
 albedo_texture = ExtResource("1_m757d")

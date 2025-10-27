@@ -71,7 +71,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_drawer_lower()
 		
-		elif hit.name == "Note":
+		elif hit.is_in_group("Note"):
 			interaction_label.text = "[E] Read"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):

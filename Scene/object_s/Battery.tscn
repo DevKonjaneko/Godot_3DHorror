@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=4 uid="uid://cql47emoguxmu"]
 
-[ext_resource type="Texture2D" uid="uid://cs5mhaswj5ful" path="res://Assets/glb_models/battery/battery_low_poly_Image_0.png" id="1_dyjuh"]
+[ext_resource type="Texture2D" uid="uid://cs5mhaswj5ful" path="res://Assets/glb_models/electric/battery/battery_low_poly_Image_0.png" id="1_dyjuh"]
 [ext_resource type="Script" uid="uid://cgqpanbtrfjf6" path="res://Inventory/InteractableItem.gd" id="1_k87sj"]
-[ext_resource type="Texture2D" uid="uid://bgwk0eobgvho4" path="res://Assets/glb_models/battery/battery_low_poly_Image_1.png" id="2_k87sj"]
-[ext_resource type="Texture2D" uid="uid://cjxq6dsd3rvm8" path="res://Assets/glb_models/battery/battery_low_poly_Image_2.png" id="3_e7v63"]
+[ext_resource type="Texture2D" uid="uid://bgwk0eobgvho4" path="res://Assets/glb_models/electric/battery/battery_low_poly_Image_1.png" id="2_k87sj"]
+[ext_resource type="Texture2D" uid="uid://cjxq6dsd3rvm8" path="res://Assets/glb_models/electric/battery/battery_low_poly_Image_2.png" id="3_e7v63"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8nyn"]
 resource_name = "Scene_-_Root"

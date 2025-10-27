@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=4 uid="uid://c4s8cm7qeyph0"]
 
-[ext_resource type="Texture2D" uid="uid://ci2a4ssm21ee4" path="res://Assets/glb_models/light/Lamppostglb_ConcreteBare_01.png" id="1_6d8fa"]
-[ext_resource type="Texture2D" uid="uid://cvb7fhom7lueh" path="res://Assets/glb_models/light/Lamppostglb_Metal.jpg" id="2_7qawg"]
-[ext_resource type="Texture2D" uid="uid://cvtblayrm6o73" path="res://Assets/glb_models/light/Lamppostglb_Lights_01.jpg" id="3_m7tqx"]
-[ext_resource type="Texture2D" uid="uid://b8nxlhmec48pv" path="res://Assets/glb_models/light/Lamppostglb_Lights_01_Emissor.png" id="4_rkbiv"]
+[ext_resource type="Texture2D" uid="uid://ci2a4ssm21ee4" path="res://Assets/glb_models/electric/light/Lamppostglb_ConcreteBare_01.png" id="1_6d8fa"]
+[ext_resource type="Texture2D" uid="uid://cvb7fhom7lueh" path="res://Assets/glb_models/electric/light/Lamppostglb_Metal.jpg" id="2_7qawg"]
+[ext_resource type="Texture2D" uid="uid://cvtblayrm6o73" path="res://Assets/glb_models/electric/light/Lamppostglb_Lights_01.jpg" id="3_m7tqx"]
+[ext_resource type="Texture2D" uid="uid://b8nxlhmec48pv" path="res://Assets/glb_models/electric/light/Lamppostglb_Lights_01_Emissor.png" id="4_rkbiv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stddo"]
 resource_name = "ConcreteBare_01"

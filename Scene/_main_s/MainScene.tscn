@@ -54,8 +54,24 @@ directional_shadow_blend_splits = true
 [node name="Village" parent="." instance=ExtResource("1_c6k8p")]
 transform = Transform3D(1.75, 0, 0, 0, 1.25, 0, 0, 0, 1.75, 0.05319023, 0.062162638, -0.022448063)
 
+[node name="Note2" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.082951, 0.792318, -9.416071)
+note_text = "“นายอาจหนีฉันได้… แต่หนีผลของการกระทำในโลกดิจิทัลไม่ได้หรอก”
+บทเรียนสำคัญของเกมนี้คืออะไร?
+1.ใช้เทคโนโลยีอย่างมีสติและรับผิดชอบ
+2. กลัวผีไว้ก่อน
+3. ไม่กดลิ้งค์เด็ดขาด
+4. ปิดอินเทอร์เน็ตตลอดเวลา"
+font_size = 25
+
 [node name="Note" parent="." instance=ExtResource("3_mbwnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641976, 1.2245024, -3.2895124)
+note_text = "2.ส่งลิ้งค์มา… แต่นายไม่เช็กเลยสินะ…”ควรทำอย่างไรก่อนกดลิ้งค์ที่ได้รับจากคนรู้จัก?
+ 1. กดทันที
+ 2. ตรวจสอบความถูกต้องของ URL
+ 3. แชร์ต่อ
+ 4. เปิดในโหมดลับ"
+font_size = 25
 
 [node name="task_trigger" parent="." instance=ExtResource("7_kqf6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -5)
@@ -73,4 +89,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736045, 0.6131738, 0.2727
 transform = Transform3D(0.99713516, 0, -0.07564013, 0, 1, 0, 0.07564013, 0, 0.99713516, 3.3195176, 1.7671404, 1.0258665)
 
 [node name="Door_key" parent="." instance=ExtResource("9_1f7mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.782396, 0.21188611, 0.41742682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.218976, 0.9024025, 0)

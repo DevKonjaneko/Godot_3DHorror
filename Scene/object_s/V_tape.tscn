@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://qlkscgv4q7ua"]
 
 [ext_resource type="Script" uid="uid://cgqpanbtrfjf6" path="res://Inventory/InteractableItem.gd" id="1_oktdj"]
-[ext_resource type="Texture2D" uid="uid://b52v37rfb7ym7" path="res://Assets/glb_models/videotape/tape_VHS_04.jpg" id="2_ytjox"]
+[ext_resource type="Texture2D" uid="uid://b52v37rfb7ym7" path="res://Assets/glb_models/electric/videotape/tape_VHS_04.jpg" id="2_ytjox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7cro"]
 resource_name = "VHS_04.001"

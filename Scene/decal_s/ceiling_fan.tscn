@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://dcfxmdxng3cj8"]
 
-[ext_resource type="Texture2D" uid="uid://dlto5v7xvlkc5" path="res://Assets/glb_models/Ceiling_Fan_Ceiling_Fan.png" id="1_qftov"]
+[ext_resource type="Texture2D" uid="uid://dlto5v7xvlkc5" path="res://Assets/glb_models/electric/Ceiling_Fan_Ceiling_Fan.png" id="1_qftov"]
 
 [sub_resource type="GDScript" id="GDScript_qftov"]
 resource_name = "Ceiling_Fan"
