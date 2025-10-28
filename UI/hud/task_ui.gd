@@ -1,4 +1,4 @@
-extends CanvasLayer #task_ui v1.0
+extends Control #task_ui v1.0
 #res://Scene/note_s/task_trigger.gd
 func _ready() -> void:
 	set_task(null, "ทดสอบระบบเควส")

@@ -31,11 +31,11 @@ func _physics_process(delta: float) -> void:
 	if (Input.mouse_mode == Input.MOUSE_MODE_VISIBLE):
 		return
 	handle_crouching(delta)
-	handle_movement()
+	handle_movement(delta)
 	handle_gravity(delta)
 	move_and_slide()
 
-func handle_movement():
+func handle_movement(delta):
 	var current_speed = speed
 	
 	var is_sprinting = Input.is_action_pressed("Sprint")
@@ -50,7 +50,7 @@ func handle_movement():
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-	
+		
 	#Footstep Logic
 	if direction and is_on_floor():
 		if is_sprinting:

@@ -52,7 +52,17 @@ directional_shadow_split_1 = 0.05
 directional_shadow_blend_splits = true
 
 [node name="Village" parent="." instance=ExtResource("1_c6k8p")]
-transform = Transform3D(1.75, 0, 0, 0, 1.25, 0, 0, 0, 1.75, 0.05319023, 0.062162638, -0.022448063)
+transform = Transform3D(1.75, 0, 0, 0, 1.25, 0, 0, 0, 1.75, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Note" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641976, 1.1527436, -3.2895126)
+note_text = "2.ส่งลิ้งค์มา… แต่นายไม่เช็กเลยสินะ…”ควรทำอย่างไรก่อนกดลิ้งค์ที่ได้รับจากคนรู้จัก?
+ 1. กดทันที
+ 2. ตรวจสอบความถูกต้องของ URL
+ 3. แชร์ต่อ
+ 4. เปิดในโหมดลับ"
+font_size = 25
 
 [node name="Note2" parent="." instance=ExtResource("3_mbwnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.082951, 0.792318, -9.416071)
@@ -64,13 +74,24 @@ note_text = "“นายอาจหนีฉันได้… แต่หน
 4. ปิดอินเทอร์เน็ตตลอดเวลา"
 font_size = 25
 
-[node name="Note" parent="." instance=ExtResource("3_mbwnc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641976, 1.2245024, -3.2895124)
-note_text = "2.ส่งลิ้งค์มา… แต่นายไม่เช็กเลยสินะ…”ควรทำอย่างไรก่อนกดลิ้งค์ที่ได้รับจากคนรู้จัก?
- 1. กดทันที
- 2. ตรวจสอบความถูกต้องของ URL
- 3. แชร์ต่อ
- 4. เปิดในโหมดลับ"
+[node name="Note3" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.9182668, 0, 0.39596224, 0, 1, 0, -0.39596224, 0, 0.9182668, 3.2692318, 0.53144264, -16.517826)
+note_text = "“นายอาจหนีฉันได้… แต่หนีผลของการกระทำในโลกดิจิทัลไม่ได้หรอก”
+บทเรียนสำคัญของเกมนี้คืออะไร?
+1.ใช้เทคโนโลยีอย่างมีสติและรับผิดชอบ
+2. กลัวผีไว้ก่อน
+3. ไม่กดลิ้งค์เด็ดขาด
+4. ปิดอินเทอร์เน็ตตลอดเวลา"
+font_size = 25
+
+[node name="Note4" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(0.6023305, 0, -0.7982466, 0, 1, 0, 0.7982466, 0, 0.6023305, 1.1005723, 0.014265895, -18.490381)
+note_text = "“นายอาจหนีฉันได้… แต่หนีผลของการกระทำในโลกดิจิทัลไม่ได้หรอก”
+บทเรียนสำคัญของเกมนี้คืออะไร?
+1.ใช้เทคโนโลยีอย่างมีสติและรับผิดชอบ
+2. กลัวผีไว้ก่อน
+3. ไม่กดลิ้งค์เด็ดขาด
+4. ปิดอินเทอร์เน็ตตลอดเวลา"
 font_size = 25
 
 [node name="task_trigger" parent="." instance=ExtResource("7_kqf6j")]

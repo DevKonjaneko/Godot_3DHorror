@@ -70,14 +70,14 @@ func _physics_process(_delta: float) -> void:
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_drawer_lower()
-		
-		elif hit.is_in_group("Note"):
+		#Note
+		elif hit.is_in_group("Note"): # ใช้ Group แทน Staticbody3D 
 			interaction_label.text = "[E] Read"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.interact()
 				print("Read Note")
-				
+		#Doorkey
 		elif hit.name == "Door_key":
 			if hit.has_method("on_focus"):
 				hit.on_focus()
@@ -86,7 +86,27 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.interact()
 				print("Key")
-
+		#Pc
+		elif hit.is_in_group("PC"):
+			interaction_label.text = "[E] Interact"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.interact()
+				print("Used Pc")
+				
+		elif hit.name == "Refrigerator_U_D":
+			interaction_label.text = "[E] Interact"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.get_parent().get_parent().toggle_upper_door()
+				print("Open")
+		elif hit.name == "Refrigerator_L_D":
+			interaction_label.text = "[E] Interact"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.get_parent().get_parent().toggle_lower_door()
+				print("Open")
+				
 		else: #ถ้าชนกับของอื่น → ให้ซ่อน Label
 			interaction_label.hide()
 			

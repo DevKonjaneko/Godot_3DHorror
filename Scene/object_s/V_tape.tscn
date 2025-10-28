@@ -61,15 +61,14 @@ emission_energy_multiplier = 3.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_m23ow"]
 size = Vector3(0.325, 0.05, 0.175)
 
-[node name="V_tapes" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+[node name="VHS_tape" type="RigidBody3D"]
 script = ExtResource("1_oktdj")
-ItemHighlightMesh = NodePath("")
 
-[node name="V_tapes" type="MeshInstance3D" parent="."]
+[node name="VHS_tape" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_tdwxw")
 skeleton = NodePath("")
 
-[node name="Outline" type="MeshInstance3D" parent="V_tapes"]
+[node name="Outline" type="MeshInstance3D" parent="VHS_tape"]
 mesh = SubResource("ArrayMesh_m23ow")
 surface_material_override/0 = SubResource("StandardMaterial3D_w7pgf")
 

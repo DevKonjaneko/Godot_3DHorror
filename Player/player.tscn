@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=38 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -22,6 +22,8 @@
 [ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://bqxsq5o16d3mv" path="res://Scene/note_s/note_ui.gd" id="18_n471f"]
 [ext_resource type="Texture2D" uid="uid://gurwdofi7oat" path="res://Textures/questions/oldpage.png" id="20_hshwv"]
+[ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
+[ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -69,6 +71,8 @@ ProgressBar/font_sizes/font_size = 20
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_n471f")
 
 [sub_resource type="Theme" id="Theme_pisgm"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q03lm"]
 bg_color = Color(0.223238, 0.24924, 0.26794, 1)
@@ -85,6 +89,10 @@ corner_radius_bottom_left = 5
 shadow_color = Color(0, 0, 0, 0.168627)
 shadow_size = 3
 shadow_offset = Vector2(-1, 3)
+
+[sub_resource type="Theme" id="Theme_8viyr"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pisgm"]
 shader = ExtResource("16_lfmf2")
@@ -226,7 +234,6 @@ script = ExtResource("8_81rhn")
 PlayerBody = NodePath("../../..")
 CollisionMask = 1
 InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="player_ui/PlayerUI/InventoryUI"]
 custom_minimum_size = Vector2(100, 100)
@@ -260,17 +267,9 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 5
 
-[node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
-material = SubResource("ShaderMaterial_pisgm")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="note_ui" type="Control" parent="player_ui/PlayerUI"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -315,6 +314,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("20_hshwv")
 expand_mode = 1
 
@@ -334,18 +334,31 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -41.5
-offset_top = -31.0
-offset_right = 31.5
-offset_bottom = -5.0
+offset_left = -36.5
+offset_top = -26.0
+offset_right = 36.5
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_8viyr")
 text = "[x] close"
+
+[node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
+material = SubResource("ShaderMaterial_pisgm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="task_ui" parent="player_ui/PlayerUI" groups=["task_manager"] instance=ExtResource("8_00tjw")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
 
 [node name="pause_menu" parent="player_ui/PlayerUI" instance=ExtResource("10_5htga")]
 visible = false
-
-[node name="task_ui" parent="player_ui" groups=["task_manager"] instance=ExtResource("8_00tjw")]
 
 [connection signal="OnItemPickedUp" from="InteractionArea" to="player_ui/PlayerUI/InventoryUI" method="PickupItem"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]

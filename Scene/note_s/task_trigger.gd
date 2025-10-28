@@ -1,7 +1,7 @@
 extends Area3D #task_trigger
 #res://Scene/note_s/task_trigger.gd
 
-@onready var ui = get_tree().current_scene.get_node("PlayerBody/player_ui/task_ui")
+@onready var ui = get_tree().current_scene.get_node("PlayerBody/player_ui/PlayerUI/task_ui")
 @export var task_text: String
 var triggered = false
 

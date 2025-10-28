@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://iay1tae1y6ly" path="res://UI/hud/task_ui.gd" id="1_5gb6f"]
 
-[node name="task_ui" type="CanvasLayer"]
+[node name="task_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_5gb6f")
 
 [node name="TaskTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -19,6 +22,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Take:"
 
 [node name="DescriptionTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
