@@ -4,6 +4,9 @@ class_name InventorySlot
 
 signal OnItemEquiped(SlotID)
 signal OnItemDropped(fromSlotID, toSlotID)
+# Test
+signal OnItemConsumed(SlotID)
+# ===
 
 @export var EquippedHighlight : Panel
 @export var IconSlot : TextureRect
@@ -15,12 +18,24 @@ var SlotData : ItemData
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		# Double Click
 		if (event.button_index == MOUSE_BUTTON_LEFT and event.double_click):
-			OnItemEquiped.emit(InventorySlotID)
-		#โค้ดส่วนที่เพิ่มเข้ามา --- กรณีคลิกครั้งเดียว: แสดงข้อมูล ---
+			# Test
+			if SlotFilled and SlotData != null:
+				# เช็คว่าเป็น CONSUMABLE หรือไม่
+				if SlotData.Type == ItemData.Itemtype.CONSUMABLE:
+					# ส่งสัญญาณว่าไอเทมถูกใช้แล้ว
+					#print("Consumed: ", SlotData.ItemName)
+					OnItemConsumed.emit(InventorySlotID)
+					get_viewport().set_input_as_handled()
+				else:
+					OnItemEquiped.emit(InventorySlotID)
+		
+		# Single Click
 		elif (event.button_index == MOUSE_BUTTON_LEFT):
 			if SlotFilled and SlotData != null:
 				print("Item Name: ", SlotData.ItemName)
+				print("Item Type: ", SlotData.Type)
 				get_viewport().set_input_as_handled()
 
 func FillSlot(data : ItemData, equipped : bool):

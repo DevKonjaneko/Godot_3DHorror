@@ -27,8 +27,18 @@ func _ready():
 		slot.InventorySlotID = i
 		slot.OnItemDropped.connect(ItemDroppedOnSlot.bind())
 		slot.OnItemEquiped.connect(ItemEquipped.bind())
+		slot.OnItemConsumed.connect(ConsumeItem.bind())
 		InventorySlots.append(slot)
-		
+
+func ConsumeItem(slotID: int):
+	print("Consuming item from slot: ", slotID)
+	# ลบไอเทมออกจาก Slot
+	InventorySlots[slotID].FillSlot(null, false)
+	# ถ้า Slot นี้ถูก Equip อยู่ → Reset
+	if EquippedSlot == slotID:
+		EquippedSlot = -1
+	print("Item removed from inventory!")
+
 func PickupItem(item : ItemData):
 	var foundSlot : bool = false
 	for slot in InventorySlots:

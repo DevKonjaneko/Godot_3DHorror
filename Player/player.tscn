@@ -48,6 +48,9 @@ ItemModelPrefab = ExtResource("7_xsqkg")
 
 [sub_resource type="Resource" id="Resource_n471f"]
 script = ExtResource("3_05jue")
+Type = 1
+Consumable_value = 50.0
+Item_Effect = "recharge_battery"
 ItemName = "Battery"
 Icon = ExtResource("12_n471f")
 ItemModelPrefab = ExtResource("13_n471f")
