@@ -10,5 +10,6 @@ task_text = "เควสต่อไป"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_y81uw")
+debug_color = Color(1, 1, 1, 1)
 
 [connection signal="area_entered" from="." to="." method="enter_trigger"]

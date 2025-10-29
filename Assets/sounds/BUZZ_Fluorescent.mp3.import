@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/BUZZ_Fluorescent.mp3-427874c7cd5a9ed84be61633
 [params]
 
 loop=true
-loop_offset=1.0
+loop_offset=1.2
 bpm=0.0
 beat_count=0
 bar_beats=4

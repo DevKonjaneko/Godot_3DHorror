@@ -10,7 +10,7 @@ extends Node3D
 @export var max_flicker_time: float = 0.5
 @onready var timer: Timer = $Timer
 # Sound_Effect
-@onready var buzz_sound: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var buzz_sound: AudioStreamPlayer3D = $BUZZ_Fluorescent
 
 func _ready() -> void:
 	set_light_state(is_on) # ตั้งค่าสถานะเริ่มต้นของไฟเมื่อเริ่มฉาก
@@ -29,7 +29,8 @@ func set_light_state(state: bool) -> void:
 			mesh_node.set_surface_override_material(0, material_on)  #ถ้า state เป็น true (เปิดไฟ) ให้ใช้ material_on
 		else:
 			mesh_node.set_surface_override_material(0, material_off) #ถ้า state เป็น false (ปิดไฟ) ให้ใช้ material_off
-			
+	
+	# Sound effect
 	if buzz_sound:
 		if state:
 			#เปิดไฟ -> เล่นเสียง

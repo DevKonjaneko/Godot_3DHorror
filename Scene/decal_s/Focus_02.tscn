@@ -74,9 +74,9 @@ light_energy = 2.0
 shadow_enabled = true
 omni_range = 8.5
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="BUZZ_Fluorescent" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_f8g0r")
-volume_db = -30.0
+volume_db = -15.0
 
 [node name="Timer" type="Timer" parent="."]
 

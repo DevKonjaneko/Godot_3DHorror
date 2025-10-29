@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=49 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d1eklw33buvw1" path="res://Inventory/ItemData.gd" id="3_05jue"]
 [ext_resource type="AudioStream" uid="uid://c8s1bvm5dpik6" path="res://Assets/sounds/Footstep_Sprint.mp3" id="3_7emwf"]
 [ext_resource type="Script" uid="uid://djbk3306m6ehb" path="res://Player/player_interact.gd" id="3_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://ct0cw4h8mohiq" path="res://Assets/sounds/Heartbeat_1.mp3" id="4_efx54"]
 [ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Scene/object_s/TestCube.tscn" id="4_g74hu"]
 [ext_resource type="Script" uid="uid://dtfsqjsb8eskv" path="res://Player/hand.gd" id="5_n471f"]
 [ext_resource type="Texture2D" uid="uid://dmm2hx7m8xjq5" path="res://Textures/SphereIcon.png" id="6_mu7kc"]
@@ -15,14 +16,18 @@
 [ext_resource type="Script" uid="uid://cg8ggpore0g04" path="res://Inventory/InventoryHandler.gd" id="8_81rhn"]
 [ext_resource type="PackedScene" uid="uid://ch1kc3ssvcr6m" path="res://UI/hud/crosshair.tscn" id="9_apopc"]
 [ext_resource type="PackedScene" uid="uid://dcb2gmc4jn4eg" path="res://UI/mainmenu/pause_menu.tscn" id="10_5htga"]
-[ext_resource type="Texture2D" uid="uid://tmpxjj65ogpa" path="res://Textures/icons/Screenshot 2025-10-26 144817.png" id="12_n471f"]
+[ext_resource type="Texture2D" uid="uid://tmpxjj65ogpa" path="res://Textures/icons/Battery.png" id="12_n471f"]
 [ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="12_o28un"]
 [ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="13_n471f"]
+[ext_resource type="Texture2D" uid="uid://bgc6j4bmpchrn" path="res://Textures/icons/Key.png" id="15_76lrf"]
 [ext_resource type="Script" uid="uid://cxe0qf28btywk" path="res://Player/player_ui.gd" id="16_7emwf"]
+[ext_resource type="PackedScene" uid="uid://1wmf11s0kx41" path="res://Scene/object_s/Door_key.tscn" id="16_efx54"]
 [ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://d0at5lsw7nrp8" path="res://icon.svg" id="18_8viyr"]
 [ext_resource type="Script" uid="uid://bqxsq5o16d3mv" path="res://Scene/note_s/note_ui.gd" id="18_n471f"]
 [ext_resource type="Texture2D" uid="uid://gurwdofi7oat" path="res://Textures/questions/oldpage.png" id="20_hshwv"]
 [ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
+[ext_resource type="Script" uid="uid://c03fuduvybtcy" path="res://Player/pc_screen_ui.gd" id="22_8viyr"]
 [ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
@@ -56,8 +61,16 @@ Icon = ExtResource("12_n471f")
 ItemModelPrefab = ExtResource("13_n471f")
 metadata/_custom_type_script = "uid://d1eklw33buvw1"
 
+[sub_resource type="Resource" id="Resource_8viyr"]
+script = ExtResource("3_05jue")
+Type = 2
+ItemName = "DoorKey"
+Icon = ExtResource("15_76lrf")
+ItemModelPrefab = ExtResource("16_efx54")
+metadata/_custom_type_script = "uid://d1eklw33buvw1"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
-radius = 2.0
+radius = 1.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n471f"]
 bg_color = Color(1, 1, 1, 1)
@@ -77,21 +90,27 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_n471f")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q03lm"]
-bg_color = Color(0.223238, 0.24924, 0.26794, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.8, 0.8, 0.8, 0.129412)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.168627)
-shadow_size = 3
-shadow_offset = Vector2(-1, 3)
+[sub_resource type="Theme" id="Theme_qemgg"]
+
+[sub_resource type="Theme" id="Theme_sm0op"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_76lrf"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_efx54"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_755ss"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_bbimk"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
 
 [sub_resource type="Theme" id="Theme_8viyr"]
 Button/styles/hover = ExtResource("21_8mwp6")
@@ -118,20 +137,23 @@ shader_parameter/brightness = 0.65
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_intensity = 0.45
+shader_parameter/vignette_opacity = 0.750000035625
 
-[node name="PlayerBody" type="CharacterBody3D"]
+[node name="PlayerBody" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_lqs8g")
+health = 29.0
 
 [node name="Footstep_Walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_pisgm")
-volume_db = -17.5
 max_distance = 1500.0
 
 [node name="Footstep_Sprint" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7emwf")
-volume_db = -17.5
+
+[node name="Heartbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_efx54")
+volume_db = -10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 gi_mode = 2
@@ -144,11 +166,12 @@ shape = SubResource("CapsuleShape3D_656tx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_x3vf3")
 
-[node name="RayCast3D" type="RayCast3D" parent="CameraContainer"]
+[node name="RayCast3D" type="RayCast3D" parent="CameraContainer" node_paths=PackedStringArray("pc_ui")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.045, 0)
 target_position = Vector3(0, -3, 0)
 collision_mask = 3
 script = ExtResource("3_p5o4e")
+pc_ui = NodePath("../../player_ui/PlayerUI/pc_screen_ui")
 
 [node name="Camera3D" type="Camera3D" parent="CameraContainer"]
 transform = Transform3D(1, 0, 0, 0, 1.0000005, 0, 0, 0, 1.0000005, 0, 0, 0)
@@ -175,7 +198,7 @@ spot_angle = 35.0
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_kykvu")
-ItemTypes = Array[ExtResource("3_05jue")]([SubResource("Resource_qmlov"), SubResource("Resource_eff87"), SubResource("Resource_n471f")])
+ItemTypes = Array[ExtResource("3_05jue")]([SubResource("Resource_qmlov"), SubResource("Resource_eff87"), SubResource("Resource_n471f"), SubResource("Resource_8viyr")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("SphereShape3D_kv1ul")
@@ -225,7 +248,7 @@ theme_override_colors/font_shadow_color = Color(0.8476528, 0.8476528, 0.8476528,
 theme_override_font_sizes/font_size = 20
 text = "[E] Interact"
 
-[node name="InventoryUI" type="Control" parent="player_ui/PlayerUI" node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="pc_screen_ui" type="Control" parent="player_ui/PlayerUI"]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -233,42 +256,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("8_81rhn")
-PlayerBody = NodePath("../../..")
-CollisionMask = 1
-InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+script = ExtResource("22_8viyr")
 
-[node name="Panel" type="Panel" parent="player_ui/PlayerUI/InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = -328.0
-offset_right = 414.0
-offset_bottom = -43.0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_q03lm")
-
-[node name="MarginContainer" type="MarginContainer" parent="player_ui/PlayerUI/InventoryUI/Panel"]
+[node name="Background" type="ColorRect" parent="player_ui/PlayerUI/pc_screen_ui"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.9019608)
 
-[node name="GridContainer" type="GridContainer" parent="player_ui/PlayerUI/InventoryUI/Panel/MarginContainer"]
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/pc_screen_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -260.0
+offset_right = 425.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI/pc_screen_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -20.0
+offset_right = 55.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
-columns = 5
+texture = ExtResource("18_8viyr")
+
+[node name="Label" type="Label" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+text = "User - kc12398545"
+
+[node name="LineEdit" type="LineEdit" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_qemgg")
+placeholder_text = "Enter Password"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Enter" type="Button" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_sm0op")
+text = "Enter"
+
+[node name="Back" type="Button" parent="player_ui/PlayerUI/pc_screen_ui/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "[X]"
 
 [node name="note_ui" type="Control" parent="player_ui/PlayerUI"]
 process_mode = 3
@@ -330,20 +389,95 @@ offset_bottom = 480.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -36.5
-offset_top = -26.0
-offset_right = 36.5
+offset_left = -120.0
+offset_top = -61.0
+offset_right = 120.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="1" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_76lrf")
+text = "1."
+
+[node name="2" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_efx54")
+text = "2."
+
+[node name="3" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_755ss")
+text = "3."
+
+[node name="4" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bbimk")
+text = "4."
+
+[node name="Back" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_8viyr")
 text = "[x] close"
+
+[node name="InventoryUI" type="Control" parent="player_ui/PlayerUI" node_paths=PackedStringArray("PlayerBody", "FlashlightNode", "InventoryGrid")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_81rhn")
+PlayerBody = NodePath("../../..")
+CollisionMask = 1
+FlashlightNode = NodePath("../../../CameraContainer/hand")
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -328.0
+offset_right = 414.0
+offset_bottom = -43.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="player_ui/PlayerUI/InventoryUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="player_ui/PlayerUI/InventoryUI/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5
 
 [node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
 material = SubResource("ShaderMaterial_pisgm")

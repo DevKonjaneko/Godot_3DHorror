@@ -1,6 +1,6 @@
 extends RayCast3D
-#@onready var crosshair = get_parent().get_parent().get_node("player_ui/PlayerUI/VBoxContainer/crosshair")
 @onready var interaction_label = get_parent().get_parent().get_node("player_ui/PlayerUI/VBoxContainer/interaction_label")
+@export var pc_ui: PCLoginScreen
 
 func _ready():
 	interaction_label.hide()
@@ -17,14 +17,14 @@ func _physics_process(_delta: float) -> void:
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().get_parent().toggle_door()
-		
+
 		#Washing_Machine
 		elif hit.name == "washing_machine":
 			interaction_label.text = "[E] Open Door"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().get_parent().toggle_door()
-		
+
 		#Gardengate
 		elif hit.name == "garden_gate_r":
 			var d_script = hit.get_parent().get_parent()
@@ -40,21 +40,21 @@ func _physics_process(_delta: float) -> void:
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_left_door()
-		
+
 		#Light_Switch
 		elif hit.name == "light_switch":
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().toggle_light()
-		
+
 		#Door_bell
 		elif hit.name == "door_bell":
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().ring_bell()
-		
+
 		#Washbasin_Drawer
 		elif hit.name == "Washbasin_drawer_upper":
 			var d_script = hit.get_parent().get_parent()
@@ -70,6 +70,7 @@ func _physics_process(_delta: float) -> void:
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_drawer_lower()
+
 		#Note
 		elif hit.is_in_group("Note"): # ใช้ Group แทน Staticbody3D 
 			interaction_label.text = "[E] Read"
@@ -77,6 +78,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.interact()
 				print("Read Note")
+
 		#Doorkey
 		elif hit.name == "Door_key":
 			if hit.has_method("on_focus"):
@@ -86,13 +88,15 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.interact()
 				print("Key")
+
 		#Pc
 		elif hit.is_in_group("PC"):
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
-				hit.interact()
 				print("Used Pc")
+				if pc_ui:
+					pc_ui.show_ui()
 				
 		elif hit.name == "Refrigerator_U_D":
 			interaction_label.text = "[E] Interact"
@@ -107,9 +111,25 @@ func _physics_process(_delta: float) -> void:
 				hit.get_parent().get_parent().toggle_lower_door()
 				print("Open")
 				
+		elif hit.name == ("closet_door_l"):
+			interaction_label.text = "[E] Interact"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.get_parent().get_parent().toggle_door_left()
+				print("Open")
+		elif hit.name == ("closet_door_r"):
+			interaction_label.text = "[E] Interact"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.get_parent().get_parent().toggle_door_right()
+				print("Open")
+				
 		else: #ถ้าชนกับของอื่น → ให้ซ่อน Label
 			interaction_label.hide()
-			
+
 	else: #ถ้าไม่ได้ชนอะไรเลย → ให้ซ่อน Label
 		interaction_label.hide()
-		
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel") and pc_ui and pc_ui.visible:
+		pc_ui.hide_ui()

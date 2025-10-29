@@ -2,7 +2,7 @@ extends Control #note_ui v2.1
 
 @onready var panel = $ColorRect/Panel
 @onready var label = $ColorRect/Panel/Label
-@onready var button = $ColorRect/Panel/Button
+@onready var button = $ColorRect/Panel/VBoxContainer/Back
 
 func _ready() -> void:
 	hide()

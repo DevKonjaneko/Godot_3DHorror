@@ -1,7 +1,7 @@
 extends Node3D #hand v1.0
 
 @onready var flashlight: SpotLight3D = $SpotLight3D
-@export var battery: float = 100
+@export var battery: float = 100.0
 @export var battery_drain_rate: float = 5.0
 var is_on: bool = false
 

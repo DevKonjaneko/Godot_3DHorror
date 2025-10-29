@@ -72,7 +72,7 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyjuh"]
-size = Vector3(0.325, 0.12, 0.12)
+size = Vector3(0.26, 0.09, 0.09)
 
 [node name="Battery" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 2
@@ -81,7 +81,7 @@ script = ExtResource("1_k87sj")
 ItemHighlightMesh = NodePath("MeshInstance3D/Outline")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, 0, 0)
 mesh = SubResource("ArrayMesh_btqwe")
 skeleton = NodePath("")
 

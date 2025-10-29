@@ -11,7 +11,7 @@ extends Node3D
 @onready var timer: Timer = $Timer
 
 # Sound_Effect
-@onready var buzz_sound: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var buzz_sound: AudioStreamPlayer3D = $BUZZ_Fluorescent
 
 func _ready() -> void:
 	# ตั้งค่าสถานะเริ่มต้นของไฟเมื่อเริ่มฉาก

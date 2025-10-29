@@ -35,3 +35,18 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 25
 text = "Sample text for task"
 text_direction = 2
+
+[node name="DescriptionTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -460.0
+offset_top = 80.0
+offset_right = -4.0
+offset_bottom = 172.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Process"
+text_direction = 2

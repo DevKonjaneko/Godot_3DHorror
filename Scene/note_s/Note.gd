@@ -5,6 +5,7 @@ extends StaticBody3D #Note v1.1
 @export_multiline var note_text: String = "ใส่ข้อความของ Note ที่นี่"
 @export var font_size: int = 24 #ปรับขนาดข้อความแต่ละแผ่น
 
+
 func _ready() -> void:
 	pass
 

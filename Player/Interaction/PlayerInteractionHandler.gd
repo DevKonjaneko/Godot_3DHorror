@@ -1,9 +1,6 @@
 extends Area3D #InteractionArea v1.0
-
 signal OnItemPickedUp(item)
-
 @export var ItemTypes : Array[ItemData] = []
-
 var NearbyBodies : Array[InteractableItem]
 
 func _input(event: InputEvent) -> void:

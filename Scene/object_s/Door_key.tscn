@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://1wmf11s0kx41"]
+[gd_scene load_steps=10 format=4 uid="uid://1wmf11s0kx41"]
 
 [ext_resource type="Script" uid="uid://b8vx5dvuf1r54" path="res://Scene/object_s/Door_key.gd" id="1_fxxv7"]
 [ext_resource type="Texture2D" uid="uid://b3lw4fe3u0ha1" path="res://Assets/glb_models/keys/Door_key_Image_0.png" id="1_xyx6n"]
 [ext_resource type="Texture2D" uid="uid://dynjrv4bc8ghk" path="res://Assets/glb_models/keys/Door_key_Image_1.png" id="2_fxxv7"]
 [ext_resource type="Texture2D" uid="uid://drjic8ema0s7k" path="res://Assets/glb_models/keys/Door_key_Image_2.png" id="3_e7mom"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fxxv7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj0gc"]
 resource_name = "Material.003"
@@ -55,6 +57,7 @@ shadow_mesh = SubResource("ArrayMesh_tkwy1")
 size = Vector3(0.25, 0.035, 0.5)
 
 [node name="Door_key" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+physics_material_override = SubResource("PhysicsMaterial_fxxv7")
 script = ExtResource("1_fxxv7")
 ItemHighlightMesh = NodePath("Door_key/Outline")
 ItemName = "DoorKey"
