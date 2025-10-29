@@ -28,14 +28,14 @@ func _physics_process(_delta: float) -> void:
 		#Gardengate
 		elif hit.name == "garden_gate_r":
 			var d_script = hit.get_parent().get_parent()
-			var text = d_script.get_left_door_text()
+			var text = d_script.get_right_door_text()
 			interaction_label.text = "[E] " + text 
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_right_door()
 		elif hit.name == "garden_gate_l":
 			var d_script = hit.get_parent().get_parent()
-			var text = d_script.get_right_door_text()
+			var text = d_script.get_left_door_text()
 			interaction_label.text = "[E] " + text
 			interaction_label.show()
 			if Input.is_action_just_pressed("Interact"):

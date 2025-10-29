@@ -94,16 +94,33 @@ data = PackedVector3Array(-0.0319, 1.0584999, -0.46879998, -0.0319, -1.4484999, 
 [sub_resource type="GDScript" id="GDScript_k8slq"]
 resource_name = "door_close_trigger"
 script/source = "extends Area3D
+@export var target_door_name: String = \"Front_Door\"
+@export var close_delay: float = 0.5
+
+func _ready():
+	# Connect signal
+	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(\"Player\"):
-		print(\"👤 Player passed through! Closing door...\")
-		var door = get_parent()
-		if door and door.has_method(\"close_door\"):
+		print(\"👤 Player entered!\")
+
+		await get_tree().create_timer(close_delay).timeout
+		
+	var door = get_tree().root.find_child(target_door_name, true, false)
+
+	if door:
+		if door.has_method(\"close_door\"):
 			door.close_door()
+			print(\"Closed: \", door.name)
+		else:
+			print(\"❌ Door doesn't have close_door()\")
+	else:
+		print(\"❌ Can't find door: \", target_door_name)
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k8slq"]
+size = Vector3(1.45, 2.5, 1.6)
 
 [sub_resource type="Animation" id="Animation_7j13p"]
 length = 0.001
@@ -175,7 +192,7 @@ shape = SubResource("ConcavePolygonShape3D_7j13p")
 script = SubResource("GDScript_k8slq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, -0.225, -0.277)
 shape = SubResource("BoxShape3D_k8slq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -187,4 +204,5 @@ libraries = {
 stream = ExtResource("4_k8slq")
 volume_db = -5.0
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[node name="DoorLock" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0526316, 0, 0, 0)

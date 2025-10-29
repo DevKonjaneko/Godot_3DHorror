@@ -5,6 +5,7 @@ var opened = false
 @export var albedo_texture: Texture2D
 @onready var door_mesh: MeshInstance3D = $hinge/closet_door
 @onready var sound_effect: AudioStreamPlayer3D = $CreakingDoor
+@onready var sfx_lock: AudioStreamPlayer3D = $DoorLock
 
 func _ready():
 	if albedo_texture:
@@ -15,6 +16,7 @@ func _ready():
 func toggle_door():
 	if locked:
 		print("DoorLocked")
+		sfx_lock.play()
 		return
 	if $AnimationPlayer.is_playing():
 		return
@@ -36,6 +38,9 @@ func close_door():
 	$AnimationPlayer.play_backwards("door_open")
 	sound_effect.play()
 	print("Door auto-closed")
+
+	await $AnimationPlayer.animation_finished
+	sfx_lock.play()
 
 #Text_UI
 func get_interaction_text() -> String:

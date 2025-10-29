@@ -246,8 +246,6 @@ _data = {
 
 [node name="Garden_Gate" type="Node3D"]
 script = ExtResource("1_a31fu")
-d_r_locked = true
-d_l_locked = true
 
 [node name="garden_gate_r" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_7yw3y")

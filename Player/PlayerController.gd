@@ -3,9 +3,9 @@ extends CharacterBody3D
 @export var health: float = 100.0
 @export var max_health: float = 100.0
 #Movement
-@export var speed: float = 2.50
-@export var sprint_speed: float = 4.75
-@export var jump_velocity: float = 4.50
+@export var speed: float = 2.25
+@export var sprint_speed: float = 4.00
+@export var jump_velocity: float = 5.00
 #SoundEffect
 @onready var heartbeat: AudioStreamPlayer = $Heartbeat
 @onready var footstep_walk = $Footstep_Walk

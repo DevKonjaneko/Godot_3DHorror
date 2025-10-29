@@ -4,9 +4,10 @@ var d_l_opened = false
 @export var d_r_locked = false
 @export var d_l_locked = false
 
+#Left_Door
 func toggle_left_door():
 	if d_l_locked:
-		print("Door Locked")
+		print("Left Locked")
 		return
 	if $AnimationPlayer.is_playing():
 		return
@@ -15,10 +16,10 @@ func toggle_left_door():
 		$AnimationPlayer.play("door_left_open")
 	else:
 		$AnimationPlayer.play_backwards("door_left_open")
-		
+#Right_Door
 func toggle_right_door():
 	if d_r_locked:
-		print("Door Locked")
+		print("Right Locked")
 		return
 	if $AnimationPlayer.is_playing():
 		return
@@ -27,6 +28,7 @@ func toggle_right_door():
 		$AnimationPlayer.play("door_right_open")
 	else:
 		$AnimationPlayer.play_backwards("door_right_open")
+
 #Label 
 func get_left_door_text() -> String:
 	if d_l_locked:

@@ -14,7 +14,7 @@ func ring_bell():
 		sound_player.play()
 		time_rung += 1
 		print("Time Rung ", time_rung)
-		if time_rung == 2:
+		if time_rung >= 2:
 			get_tree().call_group("task_manager", "set_task", null, "Enter The House")
 			print("เข้าไปภายในบ้าน")
 			door.locked = false
