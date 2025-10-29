@@ -1,4 +1,4 @@
-extends Node3D
+extends Node3D #Door v2.0
 
 var opened = false
 @export var locked = false
@@ -11,7 +11,7 @@ func _ready():
 		var new_material = StandardMaterial3D.new()
 		new_material.albedo_texture = albedo_texture
 		door_mesh.set_surface_override_material(0, new_material)
-
+# Open/Close
 func toggle_door():
 	if locked:
 		print("DoorLocked")
@@ -26,11 +26,23 @@ func toggle_door():
 		$AnimationPlayer.play_backwards("door_open")
 		sound_effect.play()
 
+# Close (call from Area3D)
+func close_door():
+	if not opened or $AnimationPlayer.is_playing():
+		return
+	
+	opened = false
+	locked = true
+	$AnimationPlayer.play_backwards("door_open")
+	sound_effect.play()
+	print("Door auto-closed")
+
+#Text_UI
 func get_interaction_text() -> String:
 	if locked:
 		return "Locked"
 	if opened:
 		return "Close Door"
-		
 	return "Open Door"
+	
 	

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 #Health
-@export var health: float = 30.0
+@export var health: float = 100.0
 @export var max_health: float = 100.0
 #Movement
 @export var speed: float = 2.50

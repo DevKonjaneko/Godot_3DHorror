@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dvtycee8q36h6"]
+[gd_scene load_steps=20 format=4 uid="uid://dvtycee8q36h6"]
 
 [ext_resource type="Script" uid="uid://bjxhpwd88t8gs" path="res://Scene/interact_s/door_standard.gd" id="1_f5tmn"]
 [ext_resource type="Texture2D" uid="uid://cxaoou3wxrqua" path="res://Textures/surface/Metal_04.jpg" id="2_7u4dy"]
@@ -91,6 +91,20 @@ albedo_texture = ExtResource("3_7u4dy")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7j13p"]
 data = PackedVector3Array(-0.0319, 1.0584999, -0.46879998, -0.0319, -1.4484999, 0.4705, -0.0319, -1.4484999, -0.46879998, -0.0319, 1.0584999, -0.46879998, -0.0319, 1.0584999, 0.4705, -0.0319, -1.4484999, 0.4705, 0.0358, 1.0584999, -0.46879998, 0.0358, -1.4484999, 0.4705, 0.0358, 1.0584999, 0.4705, 0.0358, 1.0584999, -0.46879998, 0.0358, -1.4484999, -0.46879998, 0.0358, -1.4484999, 0.4705, -0.0319, -1.4484999, -0.46879998, 0.0358, 1.0584999, -0.46879998, -0.0319, 1.0584999, -0.46879998, -0.0319, -1.4484999, -0.46879998, 0.0358, -1.4484999, -0.46879998, 0.0358, 1.0584999, -0.46879998, -0.0319, 1.0584999, -0.46879998, 0.0358, 1.0584999, 0.4705, -0.0319, 1.0584999, 0.4705, -0.0319, 1.0584999, -0.46879998, 0.0358, 1.0584999, -0.46879998, 0.0358, 1.0584999, 0.4705, -0.0319, 1.0584999, 0.4705, 0.0358, -1.4484999, 0.4705, -0.0319, -1.4484999, 0.4705, -0.0319, 1.0584999, 0.4705, 0.0358, 1.0584999, 0.4705, 0.0358, -1.4484999, 0.4705, -0.0319, -1.4484999, 0.4705, 0.0358, -1.4484999, -0.46879998, -0.0319, -1.4484999, -0.46879998, -0.0319, -1.4484999, 0.4705, 0.0358, -1.4484999, 0.4705, 0.0358, -1.4484999, -0.46879998)
 
+[sub_resource type="GDScript" id="GDScript_k8slq"]
+resource_name = "door_close_trigger"
+script/source = "extends Area3D
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group(\"Player\"):
+		print(\"👤 Player passed through! Closing door...\")
+		var door = get_parent()
+		if door and door.has_method(\"close_door\"):
+			door.close_door()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8slq"]
+
 [sub_resource type="Animation" id="Animation_7j13p"]
 length = 0.001
 tracks/0/type = "value"
@@ -128,7 +142,7 @@ _data = {
 &"door_open": SubResource("Animation_f5tmn")
 }
 
-[node name="door" type="Node3D"]
+[node name="Door" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.95, 0, 0, 0)
 script = ExtResource("1_f5tmn")
 locked = true
@@ -157,6 +171,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7j13p")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/closet_door/door_static"]
 shape = SubResource("ConcavePolygonShape3D_7j13p")
 
+[node name="Area3D" type="Area3D" parent="."]
+script = SubResource("GDScript_k8slq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -0.5)
+shape = SubResource("BoxShape3D_k8slq")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_7j13p")
@@ -165,3 +186,5 @@ libraries = {
 [node name="CreakingDoor" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_k8slq")
 volume_db = -5.0
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
