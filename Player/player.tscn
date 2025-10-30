@@ -29,7 +29,7 @@
 [ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
 [ext_resource type="Script" uid="uid://c03fuduvybtcy" path="res://Player/pc_screen_ui.gd" id="22_8viyr"]
 [ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
-[ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/death_screen.tscn" id="27_755ss"]
+[ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/Death_screen.tscn" id="27_755ss"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
