@@ -189,6 +189,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7j13p")
 shape = SubResource("ConcavePolygonShape3D_7j13p")
 
 [node name="Area3D" type="Area3D" parent="."]
+<<<<<<< HEAD
+collision_mask = 0
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 script = SubResource("GDScript_k8slq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
