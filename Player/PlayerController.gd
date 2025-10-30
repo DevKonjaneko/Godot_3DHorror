@@ -1,36 +1,27 @@
 extends CharacterBody3D
-# Health
+#Health
 @export var health: float = 100.0
 @export var max_health: float = 100.0
-# Movement
+#Movement
 @export var speed: float = 2.25
 @export var sprint_speed: float = 4.00
 @export var jump_velocity: float = 5.00
-# SoundEffect
+#SoundEffect
 @onready var heartbeat: AudioStreamPlayer = $Heartbeat
 @onready var footstep_walk = $Footstep_Walk
 @onready var footstep_sprint= $Footstep_Sprint
-# Death Screen
-@onready var death_screen = $player_ui/PlayerUI/Death_screen
-# Crouching
+#Crouching
 var is_crouching = false
-
-# Heartbeat
+#⭐Heartbeat
 var is_heartbeat = false
 
 func _ready() -> void:
 	# Lock and Hide Cursor
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	# Hide Death Screen
-	if death_screen:
-		death_screen.hide()
 	
 func _process(_delta: float) -> void:
 	#⭐ อัปเดตเสียงหัวใจทุกเฟรม
 	update_heartbeat()
-	
-	if health <= 0:
-		player_died()
 	
 	if Input.is_action_just_pressed("Crouch"):
 		is_crouching = !is_crouching
@@ -93,7 +84,7 @@ func handle_gravity(delta):
 func update_heartbeat() -> void:
 	if not heartbeat or not heartbeat.stream:
 		return
-	
+		
 	# คำนวณ % HP
 	var health_percent = (health / max_health) * 100.0
 	
@@ -131,12 +122,7 @@ func heal(amount: float) -> void:
 #⭐Died
 func player_died() -> void:
 	print("💀 Player Died!")
-	# Stop HeartBeat
+	# หยุดเสียงหัวใจ
 	if heartbeat:
 		heartbeat.stop()
-	# Show DeathScreen
-	if death_screen:
-		death_screen.show()
-	# Show Cursor
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# เพิ่มโค้ดตายที่นี่

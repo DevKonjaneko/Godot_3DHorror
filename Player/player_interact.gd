@@ -8,6 +8,7 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
+<<<<<<< HEAD
 		if IsPickupableItem(hit):
 			HandlePickupItem(hit)
 		else:
@@ -45,6 +46,8 @@ func HandlePickupItem(hit: Node3D) -> void:
 				
 func HandleInteractObject(hit):
 	if is_colliding():	#เช็คว่า RayCast ชนอะไรอยู่หรือไม่
+=======
+>>>>>>> parent of a5759a3 (added death screen and respawn)
 		#Door
 		if hit.name == "door_static":
 			var door_script = hit.get_parent().get_parent().get_parent()
@@ -164,3 +167,10 @@ func HandleInteractObject(hit):
 
 	else: #ถ้าไม่ได้ชนอะไรเลย → ให้ซ่อน Label
 		interaction_label.hide()
+<<<<<<< HEAD
+=======
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel") and pc_ui and pc_ui.visible:
+		pc_ui.hide_ui()
+>>>>>>> parent of a5759a3 (added death screen and respawn)

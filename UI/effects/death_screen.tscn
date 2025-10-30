@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://do725yshq5xcn"]
 
 [ext_resource type="Script" uid="uid://dmj7gtxhrm4sx" path="res://UI/effects/Death_screen.gd" id="1_aewgs"]
@@ -8,9 +9,15 @@ Label/colors/font_shadow_color = Color(0, 0, 0, 0.49019608)
 Label/constants/shadow_offset_x = 4
 Label/constants/shadow_offset_y = 2
 Label/constants/shadow_outline_size = 2
+=======
+[gd_scene format=3 uid="uid://do725yshq5xcn"]
 
-[node name="Death_screen" type="Control"]
+[node name="death_screen" type="CanvasLayer"]
+>>>>>>> parent of a5759a3 (added death screen and respawn)
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
+<<<<<<< HEAD
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -31,28 +38,52 @@ offset_left = -227.0
 offset_top = -74.5
 offset_right = 227.0
 offset_bottom = 74.5
+=======
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+>>>>>>> parent of a5759a3 (added death screen and respawn)
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Your Death" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 367.5
+offset_top = 291.5
+offset_right = 407.5
+offset_bottom = 331.5
+
+[node name="Your Death" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
+<<<<<<< HEAD
 theme = SubResource("Theme_aewgs")
 theme_override_font_sizes/font_size = 110
+=======
+theme_override_font_sizes/font_size = 100
+>>>>>>> parent of a5759a3 (added death screen and respawn)
 text = "Your Death"
 
-[node name="Press any to respawn" type="Label" parent="VBoxContainer"]
+[node name="Press any to respawn" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
+<<<<<<< HEAD
 theme = SubResource("Theme_aewgs")
 theme_override_font_sizes/font_size = 14
+=======
+theme_override_font_sizes/font_size = 10
+>>>>>>> parent of a5759a3 (added death screen and respawn)
 text = "- Press any to respawn -"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Respawn" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "Respawn"
 
+<<<<<<< HEAD
 [node name="transitionscreen" parent="." instance=ExtResource("2_m45cv")]
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/Respawn" to="." method="_on_button_pressed"]
+=======
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
+>>>>>>> parent of a5759a3 (added death screen and respawn)

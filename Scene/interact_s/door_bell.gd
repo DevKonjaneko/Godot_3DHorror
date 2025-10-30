@@ -1,14 +1,12 @@
 extends Node3D #door_bell v1.0
 #res://Scene/interact_s/door_bell.gd
 @export var door: Node3D
-@export var ItemHighlightMesh : MeshInstance3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var time_rung = 0
 @onready var sound_player: AudioStreamPlayer3D = $AntiqueDoorBellRing
 
 func _ready() -> void:
-	if ItemHighlightMesh:
-		ItemHighlightMesh.visible = false
+	pass
 
 func ring_bell():
 	if not sound_player.is_playing():
@@ -29,10 +27,3 @@ func ring_bell():
 			#time_rung = 0
 	else:
 		print("Doorbell is already ringing!")
-
-# Raycast3D
-func GainFocus():
-	ItemHighlightMesh.visible = true
-# Raycast3D
-func LoseFocus():
-	ItemHighlightMesh.visible = false

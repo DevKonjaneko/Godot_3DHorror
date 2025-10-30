@@ -7,10 +7,7 @@ var interaction_type: String = "Pickup"
 
 func GainFocus():
 	ItemHighlightMesh.visible = true
-
-func LoseFocus():
-	ItemHighlightMesh.visible = false
-
+		
 func interact():
 	print("Item Name = ", ItemName)
 	queue_free()
