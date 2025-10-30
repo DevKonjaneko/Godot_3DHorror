@@ -8,6 +8,7 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
+<<<<<<< HEAD
 		
 		#Battery
 		if hit.is_in_group("Battery"):
@@ -16,6 +17,30 @@ func _physics_process(_delta: float) -> void:
 					hit.on_focus()
 					interaction_label.text = "[E] Pick-up"
 					interaction_label.show()
+=======
+		if IsPickupableItem(hit):
+			HandlePickupItem(hit)
+		else:
+			HandleInteractObject(hit)
+	else:
+		interaction_label.hide()  # ← แก้ไข: interaction_label() → interaction_label.hide()
+
+#func _input(event: InputEvent):
+	#if event.is_action_pressed("ui_cancel") and pc_ui and pc_ui.visible:
+		#pc_ui.hide_ui()
+			
+func IsPickupableItem(hit: Node3D) -> bool:
+	return hit.name == "Battery"
+
+func HandlePickupItem(hit: Node3D) -> void:
+	if is_colliding():	#เช็คว่า RayCast ชนอะไรอยู่หรือไม่
+		if hit.name == "Battery":
+			if global_position.distance_to(hit.global_position) <= 5.0:
+				if hit.has_method("on_focus"):
+					hit.on_focus()
+				interaction_label.text = "[E] Pick-up"
+				interaction_label.show()
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 				if Input.is_action_just_pressed("Interact"):
 					# ส่ง Signal ไปให้ Inventory
 					var interaction_area = get_parent().get_parent().get_node("InteractionArea")
@@ -29,6 +54,7 @@ func _physics_process(_delta: float) -> void:
 			else:
 				interaction_label.hide()
 				
+<<<<<<< HEAD
 		#Doorkey
 		if hit.name == "Door_key":
 			if hit.has_method("on_focus"):
@@ -39,6 +65,10 @@ func _physics_process(_delta: float) -> void:
 				hit.interact()
 				print("Key")
 		
+=======
+func HandleInteractObject(hit):
+	if is_colliding():	#เช็คว่า RayCast ชนอะไรอยู่หรือไม่
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 		#Door
 		if hit.name == "door_static":
 			var door_script = hit.get_parent().get_parent().get_parent()
@@ -109,6 +139,18 @@ func _physics_process(_delta: float) -> void:
 				hit.interact()
 				print("Read Note")
 
+<<<<<<< HEAD
+=======
+		#Doorkey
+		elif hit.name == "Door_key":
+			if hit.has_method("on_focus"):
+				hit.on_focus()
+			interaction_label.text = "[E] Pick-up"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.interact()
+				print("Key")
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 		#Pc
 		elif hit.is_in_group("PC"):
 			interaction_label.text = "[E] Interact"
@@ -117,7 +159,11 @@ func _physics_process(_delta: float) -> void:
 				print("Used Pc")
 				if pc_ui:
 					pc_ui.show_ui()
+<<<<<<< HEAD
 		#Refrigerator
+=======
+				
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 		elif hit.name == "Refrigerator_U_D":
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()
@@ -130,7 +176,11 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_lower_door()
 				print("Open")
+<<<<<<< HEAD
 		#Closet_door
+=======
+				
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 		elif hit.name == ("closet_door_l"):
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()

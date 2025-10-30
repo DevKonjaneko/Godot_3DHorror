@@ -116,5 +116,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_omv54")
 
 [node name="CeilingFanRunLow" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_xb1td")
+<<<<<<< HEAD
 volume_db = -10.0
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 unit_size = 7.5

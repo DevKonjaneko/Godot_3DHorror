@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=27 format=3 uid="uid://dit5fjgxvvysf"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://dit5fjgxvvysf"]
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 
 [ext_resource type="PackedScene" uid="uid://bl0h3mi0qhq4f" path="res://Scene/_main_s/Village.tscn" id="1_c6k8p"]
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/player.tscn" id="2_csiqh"]
@@ -8,10 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://b76niexsnwx45" path="res://UI/effects/transitionscreen.tscn" id="4_mbwnc"]
 [ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="6_csiqh"]
 [ext_resource type="PackedScene" uid="uid://1wmf11s0kx41" path="res://Scene/object_s/Door_key.tscn" id="9_1f7mq"]
+<<<<<<< HEAD
 [ext_resource type="ArrayMesh" uid="uid://exny6rr0xovd" path="res://Assets/Photography.obj" id="9_4bh3e"]
 [ext_resource type="Texture2D" uid="uid://dark8h0ohfh5t" path="res://Textures/surface/wood/Wood_06.jpg" id="10_4bh3e"]
 [ext_resource type="Texture2D" uid="uid://bvrm0fw7gju0v" path="res://Textures/pictures/image3.png" id="11_ywl1d"]
 [ext_resource type="Texture2D" uid="uid://clwsj3a1js80d" path="res://Textures/pictures/Screenshot 2025-10-30 183850.png" id="12_q41ih"]
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm7g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,16 +48,20 @@ volumetric_fog_sky_affect = 0.3
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1f7mq"]
 
+<<<<<<< HEAD
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_evdw8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q41ih"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mbwnc"]
 
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4bh3e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywl1d"]
 
+<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywl1d"]
 albedo_texture = ExtResource("10_4bh3e")
 
@@ -70,6 +81,8 @@ uv1_offset = Vector3(-0.225, 0.285, 0)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q41ih"]
 data = PackedVector3Array(-0.75, 0.5, 0.049999997, -0.75, -0.5, 0.049999997, -0.75, 0.5, -0.049999997, -0.75, 0.5, -0.049999997, -0.75, -0.5, 0.049999997, -0.75, -0.5, -0.049999997, 0.6444, -0.4296, -0.049999997, 0.6444, 0.4296, -0.049999997, 0.6444, -0.4296, 0.0046, 0.6444, -0.4296, 0.0046, 0.6444, 0.4296, -0.049999997, 0.6444, 0.4296, 0.0046, 0.75, 0.5, -0.049999997, 0.75, -0.5, -0.049999997, 0.75, 0.5, 0.049999997, 0.75, 0.5, 0.049999997, 0.75, -0.5, -0.049999997, 0.75, -0.5, 0.049999997, 0.75, 0.5, 0.049999997, 0.75, -0.5, 0.049999997, -0.75, 0.5, 0.049999997, -0.75, 0.5, 0.049999997, 0.75, -0.5, 0.049999997, -0.75, -0.5, 0.049999997, 0.75, -0.5, -0.049999997, -0.75, -0.5, -0.049999997, 0.75, -0.5, 0.049999997, 0.75, -0.5, 0.049999997, -0.75, -0.5, -0.049999997, -0.75, -0.5, 0.049999997, -0.75, 0.5, -0.049999997, 0.75, 0.5, -0.049999997, -0.75, 0.5, 0.049999997, -0.75, 0.5, 0.049999997, 0.75, 0.5, -0.049999997, 0.75, 0.5, 0.049999997, -0.6444, -0.4296, -0.049999997, -0.6444, 0.4296, -0.049999997, -0.75, -0.5, -0.049999997, -0.75, -0.5, -0.049999997, -0.6444, 0.4296, -0.049999997, -0.75, 0.5, -0.049999997, 0.75, -0.5, -0.049999997, -0.6444, -0.4296, -0.049999997, -0.75, -0.5, -0.049999997, -0.6444, 0.4296, -0.049999997, 0.6444, 0.4296, -0.049999997, -0.75, 0.5, -0.049999997, 0.6444, -0.4296, -0.049999997, -0.6444, -0.4296, -0.049999997, 0.75, -0.5, -0.049999997, -0.75, 0.5, -0.049999997, 0.6444, 0.4296, -0.049999997, 0.75, 0.5, -0.049999997, 0.6444, 0.4296, -0.049999997, 0.6444, -0.4296, -0.049999997, 0.75, 0.5, -0.049999997, 0.75, 0.5, -0.049999997, 0.6444, -0.4296, -0.049999997, 0.75, -0.5, -0.049999997, -0.6444, -0.4296, -0.049999997, 0.6444, -0.4296, -0.049999997, -0.6444, -0.4296, 0.0046, -0.6444, -0.4296, 0.0046, 0.6444, -0.4296, -0.049999997, 0.6444, -0.4296, 0.0046, 0.6444, 0.4296, -0.049999997, -0.6444, 0.4296, -0.049999997, 0.6444, 0.4296, 0.0046, 0.6444, 0.4296, 0.0046, -0.6444, 0.4296, -0.049999997, -0.6444, 0.4296, 0.0046, -0.6444, 0.4296, -0.049999997, -0.6444, -0.4296, -0.049999997, -0.6444, 0.4296, 0.0046, -0.6444, 0.4296, 0.0046, -0.6444, -0.4296, -0.049999997, -0.6444, -0.4296, 0.0046, -0.6444, 0.4296, 0.0046, -0.6444, -0.4296, 0.0046, 0.6444, 0.4296, 0.0046, 0.6444, 0.4296, 0.0046, -0.6444, -0.4296, 0.0046, 0.6444, -0.4296, 0.0046)
 
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 [node name="TestScene" type="Node3D"]
 
 [node name="transitionscreen" parent="." instance=ExtResource("4_mbwnc")]
@@ -380,6 +393,7 @@ C. มีโฆษณาไหม
 D. มีเพื่อนแชร์ไหม"
 font_size = 25
 
+<<<<<<< HEAD
 [node name="Battery" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8078115, 0.6131738, 0.27270618)
 physics_material_override = SubResource("PhysicsMaterial_1f7mq")
@@ -399,6 +413,20 @@ physics_material_override = SubResource("PhysicsMaterial_mbwnc")
 [node name="Battery5" parent="." groups=["Battery"] instance=ExtResource("6_csiqh")]
 transform = Transform3D(-0.6466699, 0, 0.7627696, 0, 1, 0, -0.7627696, 0, -0.6466699, -2.635755, 4.7141514, -10.267973)
 physics_material_override = SubResource("PhysicsMaterial_mbwnc")
+=======
+[node name="Battery" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8078115, 0.6131738, 0.27270618)
+physics_material_override = SubResource("PhysicsMaterial_1f7mq")
+
+[node name="Battery2" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(0.7115234, 0, 0.7026624, 0, 1, 0, -0.7026624, 0, 0.7115234, -6.20432, 1.080386, -19.29586)
+
+[node name="Battery3" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(-0.8574995, 0, -0.51448435, 0, 1, 0, 0.51448435, 0, -0.8574995, 6.8797693, 0.5794019, -16.52041)
+
+[node name="Battery4" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(-0.22607315, 0, -0.9741101, 0, 1, 0, 0.9741101, 0, -0.22607315, 6.7884502, 0.55620265, -16.70311)
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 
 [node name="ItemTestCube" parent="." instance=ExtResource("4_e41yp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16850662, 0.6131738, 0.27270618)
@@ -413,6 +441,7 @@ transform = Transform3D(0.99713516, 0, -0.07564013, 0, 1, 0, 0.07564013, 0, 0.99
 
 [node name="Door_key" parent="." instance=ExtResource("9_1f7mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.218976, 0.9024025, 0)
+<<<<<<< HEAD
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.4486765e-08, -1.1383327, -3.821371e-15, -1.2465119, -4.97581e-08, 8.742278e-08, -1.0897353e-07, 0, -1, 7.158017, 2.5228922, -6.432981)
@@ -435,3 +464,5 @@ surface_material_override/1 = SubResource("StandardMaterial3D_evdw8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_q41ih")
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c

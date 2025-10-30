@@ -1,9 +1,18 @@
 extends Control #InventoryUI v.1.2
 #res://Inventory/InventoryHandler.gd
 class_name InventoryHandler
+<<<<<<< HEAD
 @export var PlayerBody : CharacterBody3D
 @export_flags_3d_physics var CollisionMask : int
 @export var FlashlightNode : Node3D 
+=======
+
+@export var PlayerBody : CharacterBody3D
+@export_flags_3d_physics var CollisionMask : int
+# Test
+@export var FlashlightNode : Node3D # เชื่อมต่อกับไฟฉาย
+# ===
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 @export var ItemSlotsCount : int = 20
 @export var InventoryGrid : GridContainer
 @export var InventorySlotPrefab : PackedScene = preload("res://Inventory/InventorySlot.tscn")
@@ -15,7 +24,13 @@ func _unhandled_input(_event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+<<<<<<< HEAD
 		get_viewport().set_input_as_handled()
+=======
+		# บอกให้ Godot รู้ว่าเราใช้ Input นี้แล้ว จะได้ไม่ไปทำงานที่อื่นต่อ
+		get_viewport().set_input_as_handled()
+
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 var InventorySlots : Array[InventorySlot] = []
 var EquippedSlot : int = -1
 
@@ -33,8 +48,15 @@ func ConsumeItem(slotID: int):
 	# ตรวจสอบว่า Slot มีข้อมูลหรือไม่
 	if InventorySlots[slotID].SlotData == null:
 		return
+<<<<<<< HEAD
 	var item = InventorySlots[slotID].SlotData
 	print("Consuming item from slot: ", slotID)
+=======
+	
+	var item = InventorySlots[slotID].SlotData
+	print("Consuming item from slot: ", slotID)
+	
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 	# เช็คว่าเป็น CONSUMABLE หรือไม่
 	if item.Type == ItemData.Itemtype.CONSUMABLE:
 		# ตรวจสอบ Item_Effect และทำงานตาม effect
@@ -46,6 +68,10 @@ func ConsumeItem(slotID: int):
 					print("Used ", item.ItemName, " (+", item.Consumable_value, "% battery)")
 				else:
 					printerr("Flashlight node not found or missing recharge_battery method!")
+<<<<<<< HEAD
+=======
+					
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 			_:
 				print("Unknown item effect: ", item.Item_Effect)
 		# ลบไอเทมออกจาก Slot

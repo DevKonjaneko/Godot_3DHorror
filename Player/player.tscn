@@ -29,7 +29,11 @@
 [ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
 [ext_resource type="Script" uid="uid://c03fuduvybtcy" path="res://Player/pc_screen_ui.gd" id="22_8viyr"]
 [ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/death_screen.tscn" id="27_755ss"]
+=======
+[ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/Death_screen.tscn" id="27_755ss"]
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -169,8 +173,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_x3vf3")
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraContainer" node_paths=PackedStringArray("pc_ui")]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.03, 0)
 target_position = Vector3(0, -3.25, 0)
+=======
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.045, 0)
+target_position = Vector3(0, -3, 0)
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 collision_mask = 3
 script = ExtResource("3_p5o4e")
 pc_ui = NodePath("../../player_ui/PlayerUI/pc_screen_ui")
@@ -196,7 +205,11 @@ distance_fade_enabled = true
 spot_range = 20.0
 spot_angle = 35.0
 
+<<<<<<< HEAD
 [node name="InteractionArea" type="Area3D" parent="." groups=["Battery"]]
+=======
+[node name="InteractionArea" type="Area3D" parent="."]
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_kykvu")

@@ -10,7 +10,11 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="3DHorror"
+=======
+config/name="3DHorror_v2_2"
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 run/main_scene="uid://dtc8rqfr1exxq"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -38,8 +42,11 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 ClosetDoor=""
 Player=""
+<<<<<<< HEAD
 Battery=""
 Note=""
+=======
+>>>>>>> 80f349137cfac1222e401724817e5f33f8f49e1c
 
 [gui]
 
