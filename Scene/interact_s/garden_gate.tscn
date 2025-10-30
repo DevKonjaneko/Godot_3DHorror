@@ -1,0 +1,284 @@
+[gd_scene load_steps=23 format=4 uid="uid://bhw50s26em5nb"]
+
+[ext_resource type="Script" uid="uid://bwaktxjb5dfvf" path="res://Scene/interact_s/garden_gate.gd" id="1_a31fu"]
+[ext_resource type="Texture2D" uid="uid://in1wxwu7iiha" path="res://Assets/glb_models/door/Garden_Gate_Metal.jpg" id="1_n86gc"]
+[ext_resource type="Material" uid="uid://bkyxk783avk8q" path="res://Resources/materials/glass.tres" id="2_a31fu"]
+[ext_resource type="Texture2D" uid="uid://o1tlonrj2bue" path="res://Assets/glb_models/door/Garden_Gate_Wood_06.jpg" id="2_l0np4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v6os"]
+resource_name = "Metal"
+cull_mode = 2
+albedo_texture = ExtResource("1_n86gc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1n6ef"]
+resource_name = "Glass"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7kwei"]
+_surfaces = [{
+"aabb": AABB(-1.1228784, -1.7412131, -0.015543785, 1.1380775, 2.6890857, 0.12570031),
+"format": 34896613377,
+"index_count": 126,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAAAAAIAAAAFAAEAAwAGAAIABAACAAcABgAHAAIACAAEAAcACQAGAAMACQAFAAAACgAAAAQACgAJAAAACgAGAAkACwAKAAQACwAEAAgACgAMAAYACwAMAAoABgAMAAcACQANAAUACQADAA0ADQAIAAUADQALAAgABQAIAA4ACAAHAA4ADAAOAAcABQAOAAEACwAPAAwADQAPAAsADAAPAA4ADwABAA4ADQADAA8ADwADAAEAEAARABIAEwASABEAEwAUABIAEAAVABEAFQATABEAFQAQABYAFwAUABMAFQAXABMAFwAWABQAFQAWABcA"),
+"name": "Metal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("R/T1BAAAAAD/////AAAAAP//AAAAAAAA/////6WtAAC3C/UEAAAAAEf0CfsAAAAA//8AAKWtAAAAAAAAAAAAALcLCfsAAAAAR/T1BKWtAAC3C/UEpa0AALcLCfulrQAAAAAAAKWtAABH9An7pa0AAAAA//8AAAAAAAD//6WtAAD1CG2MAocAAPUIkXP//wAA9QiRcwKHAAAjBZFz//8AACMFkXMChwAA9QhtjP//AAAjBW2MAocAACMFbYz//wAA")
+}, {
+"aabb": AABB(-1.0707972, -1.6891313, 0.012762668, 1.0339136, 2.5849216, 0.025463281),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAAAAAAA//8AAP//AAD//wAAAAD/////AAD+////AAAAAAAAAAAAAAAAAAD//wAAAAD+/wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7yw3y"]
+resource_name = "Garden_Gate_garden_gate"
+_surfaces = [{
+"aabb": AABB(-1.1228784, -1.7412131, -0.015543785, 1.1380775, 2.6890857, 0.12570031),
+"attribute_data": PackedByteArray("yE71BNNJ///TSQAAyE4J+zax9QQrtv//K7YAADaxCfvITvUE00n//8hOCfsrtv//00kAADaxCfs2sfUEK7YAACSFAADaev//2noAACSF///TSdp6K7YkhdNJJIUrttp6JIUJ+9p69QTaegn7JIX1BDax2nrITiSFNrEkhchO2norttp600kkhSu2JIXTSdp6JIX//9p6AADaev//JIUAAMhO2no2sSSFyE4khTax2nokhfUE2noJ+9p69QQkhQn7HnQ5tOCLxksedMZL4Is5tJp8ObRkg8ZLmnzGS2SDObTgizm0HnTGS+CLxksedDm0mnwedGSD4Itkgx50mnzgi2SDHnSafOCLmnwedGSD4Is="),
+"format": 34896613399,
+"index_count": 126,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUABwAEAAYABwAGAAUACAAJAAoACgAJAAsACAAMAAkACgALAA0ADgAMAAgADQALAA8ADgAPAAwADQAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEA"),
+"material": SubResource("StandardMaterial3D_8v6os"),
+"name": "Metal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("R/T1BAAA////////AAD/////AAAAAP//R/QJ+wAA//+3C/UEAAD//wAA//8AAP//AAAAAAAA//+3Cwn7AAD//0f09QSlrQAA/////6WtAABH9An7pa0AAAAA//+lrQAA//8AAKWtAAC3Cwn7pa0AALcL9QSlrQAAAAAAAKWtAAAAAAAApa3//wAA//8AAP//AAAAAAAA//8AAP//pa3/////AAClrf//AAAAAAAA/////wAAAAD//wAAAAClrf//twsJ+6Wt/z+3C/UEAAD/P7cLCfsAAP8/twv1BKWt/z+3C/UEpa0AAEf09QQAAAAAtwv1BAAAAABH9PUEpa0AAAAA//+lrQAA/////wAAAAAAAP//AAAAAP////+lrQAA/////6Wt/z///wAAAAD/P/////8AAP8///8AAKWt/z9H9An7pa3//7cLCfsAAP//R/QJ+wAA//+3Cwn7pa3//0f09QSlrf//R/QJ+wAA//9H9PUEAAD//0f0Cfulrf//9QhtjAKH/z/1CJFz////P/UIkXMCh/8/9QhtjP///z/1CG2M//8AACMFkXP//wAA9QiRc///AAAjBW2M//8AACMFbYz/////IwWRcwKH//8jBZFz/////yMFbYwCh///9QhtjP//AAAjBW2MAocAACMFbYz//wAA9QhtjAKHAAAjBZFz//////UIkXMCh///9QiRc/////8jBZFzAof///9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3/+//9/////f////3/+//9//v//f/7//3////9/////v/9//7//f/+//3//v/9//3//v/9//7//f/+//3//v/9/////f////3////9/////f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9/////f////3////9/////f/+//3//v/9//7//f/+//7//f/+//3//v/9//7//f/9/////f////3////9/////f////3////9/////f////7//f/+//3//v/9//7//f/9//z//f/8//3//P/9//z//f/+//3//v/9//7//f/+/")
+}, {
+"aabb": AABB(-1.0707972, -1.6891313, 0.012762668, 1.0339136, 2.5849216, 0.025463281),
+"attribute_data": PackedByteArray("yE4J+zax9QTITvUENrEJ+8hOCfs2sfUENrEJ+8hO9QQ="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_1n6ef"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAAAAAAA//8AAP//AAD//wAAAAD/////AAD+////AAD//wAAAAAAAP//AAD//wAA///+/wAAAAD///9/////f////3////9/////f/9//3//f/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7kwei")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0np4"]
+albedo_texture = ExtResource("1_n86gc")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n86gc"]
+points = PackedVector3Array(-1.0588404, -0.22631454, 0.13389444, -1.144242, -1.7625421, -0.036842074, 0.050913453, -1.7625421, -0.036842074, -1.144242, 0.9692422, -0.036842074, 0.050913453, 0.9692422, 0.0911936, 0.050913453, -1.7625421, 0.0911936, 0.050913453, 0.9692422, -0.036842074, -1.144242, -1.7625421, 0.0911936, -1.144242, 0.9692422, 0.0911936, -1.1015413, -0.56725276, 0.13389444, -1.0588404, -0.56725276, 0.13389444, -1.1015413, -0.22631454, 0.13389444)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jj8en"]
+_surfaces = [{
+"aabb": AABB(-0.01519978, -1.7381201, -0.14124407, 1.1380775, 2.6890857, 0.1257003),
+"format": 34896613377,
+"index_count": 126,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAAAAAIAAAAFAAEAAwAGAAIABAACAAcABgAHAAIACAAEAAcACQAGAAMACQAFAAAACgAAAAQACgAJAAAACgAGAAkACwAKAAQACwAEAAgACgAMAAYACwAMAAoABgAMAAcACQANAAUACQADAA0ADQAIAAUADQALAAgABQAIAA4ACAAHAA4ADAAOAAcABQAOAAEACwAPAAwADQAPAAsADAAPAA4ADwABAA4ADQADAA8ADwADAAEAEAARABIAEwASABEAEwAUABIAEAAVABEAFQATABEAFQAQABYAFwAUABMAFQAXABMAFwAWABQAFQAWABcA"),
+"name": "Metal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("twsJ+///AAAAAAAA//8AAAAA/////wAAAAAAAFlSAABH9An7//8AALcL9QT//wAAAAD//1lSAAD///////8AAEf09QT//wAAtwsJ+1lSAABH9An7WVIAAEf09QRZUgAA/////1lSAAC3C/UEWVIAAP//AAD//wAA//8AAFlSAAAJ95Fz/HgAAAn3bYwAAAAACfdtjPx4AADb+m2MAAAAANv6bYz8eAAACfeRcwAAAADb+pFz/HgAANv6kXMAAAAA")
+}, {
+"aabb": AABB(0.036882818, -1.6860378, -0.069313504, 1.0339136, 2.5849216, 0.025463283),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD+////AAAAAAAA//8AAAAA/v8AAAAAAAAAAAAA//8AAP///////wAA//8AAP//AAAAAP////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0vp4k"]
+resource_name = "Garden_Gate_garden_gate_01"
+_surfaces = [{
+"aabb": AABB(-0.01519978, -1.7381201, -0.14124407, 1.1380775, 2.6890857, 0.1257003),
+"attribute_data": PackedByteArray("yE71BNNJ///TSQAAyE4J+zax9QQrtv//K7YAADaxCfvITvUE00n//8hOCfsrtv//00kAADaxCfs2sfUEK7YAACSFAADaev//2noAACSF///TSdp6K7YkhdNJJIUrttp6JIUJ+9p69QTaegn7JIX1BDax2nrITiSFNrEkhchO2norttp600kkhSu2JIXTSdp6JIX//9p6AADaev//JIUAAMhO2no2sSSFyE4khTax2nokhfUE2noJ+9p69QQkhQn7HnQ5tOCLxksedMZL4Is5tJp8ObRkg8ZLmnzGS2SDObTgizm0HnTGS+CLxksedDm0mnwedGSD4Itkgx50mnzgi2SDHnSafOCLmnwedGSD4Is="),
+"format": 34896613399,
+"index_count": 126,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUABwAEAAYABwAGAAUACAAJAAoACgAJAAsACAAMAAkACgALAA0ADgAMAAgADQALAA8ADgAPAAwADQAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEA"),
+"material": SubResource("StandardMaterial3D_8v6os"),
+"name": "Metal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("twsJ+///AIAAAAAA//8AgAAA/////wCAtwv1BP//AIBH9An7//8AgP//AAD//wCA////////AIBH9PUE//8AgLcLCftZUgAAAAAAAFlSAAC3C/UEWVIAAP//AABZUgAAAAD//1lSAABH9PUEWVIAAEf0CftZUgAA/////1lSAAD/////WVL/v///AAD///+//////////7///wAAWVL/vwAA//9ZUv+//////////78AAP//////v/////9ZUv+/R/T1BFlSAABH9An7//8AAEf09QT//wAAR/QJ+1lSAABH9An7WVL/P7cLCfv///8/R/QJ+////z+3Cwn7WVL/P///AABZUv8/AAAAAP///z///wAA////PwAAAABZUv8/AAAAAFlSAAAAAP////8AAAAAAAD//wAAAAD//1lSAAC3C/UEWVL/v0f09QT///+/twv1BP///79H9PUEWVL/v7cLCftZUv+/twv1BP///7+3Cwn7////v7cL9QRZUv+/CfeRc/x4AAAJ922MAAAAAAn3bYz8eAAACfeRcwAAAAAJ95FzAAAAANv6bYwAAAAACfdtjAAAAADb+pFzAAAAANv6kXMAAP+/2/ptjPx4/7/b+m2MAAD/v9v6kXP8eP+/CfeRcwAA/z/b+pFz/Hj/P9v6kXMAAP8/CfeRc/x4/z/b+m2MAAD/vwn3bYz8eP+/CfdtjAAA/7/b+m2M/Hj/v/9/////f////3////9/////f////3////9/////f////v//f////3////9//v//f/7//3/+//9/////f////3//fwAA/38AAP9/AAD/fwAA////f////3////9/////f/8//3//P/9//z//f/8//38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/8//3//P/9//z//f/8//3////9/////f////3////9//38AAP9/AAD/fwAA/38AAP8//3//P/9//z//f/8//3////9/////f////3////9//38AAP9/AAD/fwAA/38AAAAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}, {
+"aabb": AABB(0.036882818, -1.6860378, -0.069313504, 1.0339136, 2.5849216, 0.025463283),
+"attribute_data": PackedByteArray("yE4J+zax9QTITvUENrEJ+8hOCfs2sfUENrEJ+8hO9QQ="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_1n6ef"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD+////AAAAAAAA//8AAAAA/v8AAAAAAAAAAAAA//8AgP///////wCA//8AAP//AIAAAP////8AgP///3////9/////f////3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jj8en")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a31fu"]
+albedo_texture = ExtResource("1_n86gc")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l0np4"]
+points = PackedVector3Array(1.1159127, -0.22321455, -0.16254207, -0.036542058, -1.7594419, -0.119824514, -0.036542058, -1.7594419, 0.008194447, -0.036542058, 0.972342, -0.119824514, 1.1586134, 0.972342, 0.008194447, 1.1586134, -1.7594419, 0.008194447, -0.036542058, 0.972342, 0.008194447, 1.1586134, -1.7594419, -0.119824514, 1.1586134, 0.972342, -0.119824514, 1.0732118, -0.5641527, -0.16254207, 1.1159127, -0.5641527, -0.16254207, 1.0732118, -0.22321455, -0.16254207)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7acey"]
+resource_name = "Wood_06"
+cull_mode = 2
+albedo_texture = ExtResource("2_l0np4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uoae1"]
+_surfaces = [{
+"aabb": AABB(-1.1750349, -1.7412131, -0.10080888, 2.3500693, 2.7236028, 0.17282091),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIABAAAAAIAAwAAAAQAAAADAAEAAwAEAAUABQAEABAABAACABAAAwAFABEABQAQABEAAwARAAEAAgAHABAAEAAGABEAEAAHAAYAEQASAAEAEQAGABIABgAHABMAAgATAAcABgATABIACAACAAEAFAATAAIAFAACAAgAFQASABMAFQATABQACwABABIACwASABUACAABAAsAFQAUAAkAFQAJAAoACwAVAAoAFgAJABQAFgAUAAgAFwAKAAkAFwAJABYACwAKABcADAAXABYADwAIAAsADQALABcADQAPAAsADAANABcADwAOAAgADgAWAAgADQAOAA8ADgAMABYADQAMAA4A"),
+"lods": [0.00092577573, PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUAAwAFAAEABAAGAAUABQAGAAEAAgAHAAQABAAHAAYACAACAAEACQAHAAIACQACAAgACgAGAAcACgAHAAkACwABAAYACwAGAAoACAABAAsADAAJAAgADQAKAAkADQAJAAwACwAKAA0ADgAMAAgADQAMAA4ADwAIAAsADQAPAAsADwAOAAgADQAOAA8A")],
+"name": "Wood_06",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("UPoAAP//AABQ+sD8AAAAAFD6wPz//wAAUPoAAAAAAAD//wAA//8AAP//AAAAAAAA/////wAAAAD///////8AAK4FwPz//wAAAAD/////AAAAAP//AAAAAK4FwPwAAAAAAAAAAP//AAAAAAAAAAAAAK4FAAD//wAArgUAAAAAAAD//8D8//8AAP//wPwAAAAAUPr//wAAAABQ+v////8AAK4F/////wAArgX//wAAAAAAAMD8//8AAAAAwPwAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qy7vb"]
+resource_name = "Garden_Gate_Door_frame_003"
+_surfaces = [{
+"aabb": AABB(-1.1750349, -1.7412131, -0.10080888, 2.3500693, 2.7236028, 0.17282091),
+"attribute_data": PackedByteArray("RH7nmrqByGVEfshluoHnmnqW55qFl+eaepbIZYWXF2WEachleWgXZXlo55qEaeeahZfnmnqW55p6lshlhZcXZXloF2WEachleWjnmoRp55p6lkR+hZe6gYWXRH56lrqBRH7nmrqBF2W6geeaRH4XZXloRH6Fl7qBeWi6gYWXRH66geeaRH7IZbqByGVEfueaeWhEfoRpuoGEaUR+eWi6gbqB55pEfhdlRH7nmrqBF2WEabqBepZEfoRpRH56lrqBhZfIZXqWF2WEaRdleWjIZUR+yGW6gchlhZfIZXqWF2WEaRdleWjIZXqWuoF6lkR+hGlEfoRpuoG6gchlRH7IZQ=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAwAAYABAAFADAAMAAxAAYAMAAHADEACAAGADEACAAxADIACAAyAAkACAAJADMACgAIADMACgALAAgAGgA0ADUAGgAYADQANAAZADUANAAbABkADAAOADYADAANAA4ADgAPADYADgA3AA8AOAA3AA4AOAAOABEAOQA4ABEAOQAQADgAEwA5ABEAEwASADkAFAAVABYAFAAXABUAHwA6ADsAHwAdADoAPAA7ADoAPAA6AD0APAA9AB4APAAeABwAKgA+AD8AKgAoAD4APgApAD8APgArACkAIAAhACIAIAAjACEAJAAlACYAJAAnACUALAAtAC4ALAAvAC0A"),
+"lods": [0.00092577573, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAHAAYACAAGAAcACAAHAAkACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAAPAA4AEAAOABEAEgAQABEAEwASABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
+"material": SubResource("StandardMaterial3D_7acey"),
+"name": "Wood_06",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("UPoAAP//AABQ+sD8AAAAAFD6wPz//wAAUPoAAAAAAABQ+gAAAAAAAP//AAAAAAAAUPrA/AAAAAD/////AAAAAK4FwPwAAAAAAAD//wAAAAAAAAAAAAAAAK4FAAAAAAAA//8AAP//AIBQ+gAA//8AgFD6wPz//wCA////////AIAAAP////8AgK4FwPz//wCAAAAAAP//AICuBQAA//8AgFD6AAAAAP8///8AAP///z///wAAAAD/P1D6AAD///8///8AAP///7//////AAD/v///AAAAAP+//////////78AAP//AAD/v/////////+/AAD//////7//////AAD/v64FAAAAAP+/rgXA/P///7+uBcD8AAD/v64FAAD///+/AAAAAAAA/z+uBQAA////P64FAAAAAP8/AAAAAP///z8AAAAAAAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAK4FwPz///8/UPrA/AAA/z+uBcD8AAD/P1D6wPz///8////A/AAAAABQ+v//AAAAAK4F//8AAAAAAADA/AAAAAD//8D8////v///wPwAAP+////A/P//AIBQ+v////8AgK4F/////wCAAADA/P//AIBQ+v//////v1D6//8AAP+/rgX//wAA/7+uBf//////vwAAwPwAAAAAAADA/P//AAD/P/9//z//f/8//3//P/9/////f////3////9/////f////3////9/////f////3//f////3////9/////f////3////9/////f////3///wAA/38AAP9/AAD/fwAA/3//fwAA/38AAP9/AAD/fwAA////f////3////9/////f/9/AAD/fwAA/38AAP9/AAAAAP9/AAD/fwAA/38AAP9//z//f/8//3//P/9//z//fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9//38AAP9/AAD/f////3////9/////f///////f////3////9/////f/8//3//P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uoae1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a31fu"]
+data = PackedVector3Array(1.1229, -1.7412, 0.072, 1.1229, 0.9479, -0.1008, 1.1229, 0.9479, 0.072, 1.1229, -1.7412, 0.072, 1.1229, -1.7412, -0.1008, 1.1229, 0.9479, -0.1008, 1.1229, -1.7412, -0.1008, 1.175, 0.9479, -0.1008, 1.1229, 0.9479, -0.1008, 1.1229, -1.7412, -0.1008, 1.175, -1.7412, -0.1008, 1.175, 0.9479, -0.1008, 1.175, 0.9479, -0.1008, 1.1229, 0.9824, -0.1008, 1.1229, 0.9479, -0.1008, 1.175, 0.9479, -0.1008, 1.175, 0.9824, -0.1008, 1.1229, 0.9824, -0.1008, -1.1229, 0.9479, -0.1008, 1.1229, 0.9479, -0.1008, 1.1229, 0.9824, -0.1008, -1.1229, 0.9479, -0.1008, 1.1229, 0.9824, -0.1008, -1.1229, 0.9824, -0.1008, -1.1229, 0.9479, -0.1008, -1.1229, 0.9824, -0.1008, -1.175, 0.9824, -0.1008, -1.1229, 0.9479, -0.1008, -1.175, 0.9824, -0.1008, -1.175, 0.9479, -0.1008, -1.175, -1.7412, -0.1008, -1.1229, 0.9479, -0.1008, -1.175, 0.9479, -0.1008, -1.175, -1.7412, -0.1008, -1.1229, -1.7412, -0.1008, -1.1229, 0.9479, -0.1008, 1.175, -1.7412, -0.1008, 1.175, 0.9479, 0.072, 1.175, 0.9479, -0.1008, 1.175, -1.7412, -0.1008, 1.175, -1.7412, 0.072, 1.175, 0.9479, 0.072, 1.175, 0.9479, 0.072, 1.175, 0.9824, -0.1008, 1.175, 0.9479, -0.1008, 1.175, 0.9479, 0.072, 1.175, 0.9824, 0.072, 1.175, 0.9824, -0.1008, 1.175, -1.7412, 0.072, 1.1229, 0.9479, 0.072, 1.175, 0.9479, 0.072, 1.175, -1.7412, 0.072, 1.1229, -1.7412, 0.072, 1.1229, 0.9479, 0.072, 1.1229, 0.9479, 0.072, 1.175, 0.9824, 0.072, 1.175, 0.9479, 0.072, 1.1229, 0.9479, 0.072, 1.1229, 0.9824, 0.072, 1.175, 0.9824, 0.072, -1.1229, 0.9824, 0.072, 1.1229, 0.9824, 0.072, 1.1229, 0.9479, 0.072, -1.1229, 0.9824, 0.072, 1.1229, 0.9479, 0.072, -1.1229, 0.9479, 0.072, -1.175, 0.9479, 0.072, -1.1229, 0.9824, 0.072, -1.1229, 0.9479, 0.072, -1.175, 0.9479, 0.072, -1.175, 0.9824, 0.072, -1.1229, 0.9824, 0.072, -1.1229, -1.7412, 0.072, -1.175, 0.9479, 0.072, -1.1229, 0.9479, 0.072, -1.1229, -1.7412, 0.072, -1.175, -1.7412, 0.072, -1.175, 0.9479, 0.072, 1.1229, -1.7412, -0.1008, 1.175, -1.7412, 0.072, 1.175, -1.7412, -0.1008, 1.1229, -1.7412, -0.1008, 1.1229, -1.7412, 0.072, 1.175, -1.7412, 0.072, 1.175, 0.9824, -0.1008, 1.1229, 0.9824, 0.072, 1.1229, 0.9824, -0.1008, 1.175, 0.9824, -0.1008, 1.175, 0.9824, 0.072, 1.1229, 0.9824, 0.072, -1.1229, 0.9824, -0.1008, 1.1229, 0.9824, -0.1008, 1.1229, 0.9824, 0.072, -1.1229, 0.9824, -0.1008, 1.1229, 0.9824, 0.072, -1.1229, 0.9824, 0.072, -1.1229, 0.9824, -0.1008, -1.1229, 0.9824, 0.072, -1.175, 0.9824, 0.072, -1.1229, 0.9824, -0.1008, -1.175, 0.9824, 0.072, -1.175, 0.9824, -0.1008, -1.175, -1.7412, 0.072, -1.175, 0.9479, -0.1008, -1.175, 0.9479, 0.072, -1.175, -1.7412, 0.072, -1.175, -1.7412, -0.1008, -1.175, 0.9479, -0.1008, -1.175, 0.9479, -0.1008, -1.175, 0.9824, 0.072, -1.175, 0.9479, 0.072, -1.175, 0.9479, -0.1008, -1.175, 0.9824, -0.1008, -1.175, 0.9824, 0.072, -1.1229, -1.7412, -0.1008, -1.1229, 0.9479, 0.072, -1.1229, 0.9479, -0.1008, -1.1229, -1.7412, -0.1008, -1.1229, -1.7412, 0.072, -1.1229, 0.9479, 0.072, -1.175, -1.7412, -0.1008, -1.1229, -1.7412, 0.072, -1.1229, -1.7412, -0.1008, -1.175, -1.7412, -0.1008, -1.175, -1.7412, 0.072, -1.1229, -1.7412, 0.072, -1.1229, 0.9479, 0.072, 1.1229, 0.9479, -0.1008, -1.1229, 0.9479, -0.1008, -1.1229, 0.9479, 0.072, 1.1229, 0.9479, 0.072, 1.1229, 0.9479, -0.1008)
+
+[sub_resource type="Animation" id="Animation_anv2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("garden_gate_l:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("garden_gate_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rt47o"]
+resource_name = "door_open"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("garden_gate_l:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0), Vector3(-1.1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a31fu"]
+resource_name = "door_right_open"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("garden_gate_r:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0), Vector3(1.1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anv2r"]
+_data = {
+&"RESET": SubResource("Animation_anv2r"),
+&"door_left_open": SubResource("Animation_rt47o"),
+&"door_right_open": SubResource("Animation_a31fu")
+}
+
+[node name="Garden_Gate" type="Node3D"]
+script = ExtResource("1_a31fu")
+
+[node name="garden_gate_r" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_7yw3y")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_l0np4")
+surface_material_override/1 = ExtResource("2_a31fu")
+
+[node name="garden_gate_r" type="StaticBody3D" parent="garden_gate_r"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden_gate_r/garden_gate_r"]
+shape = SubResource("ConvexPolygonShape3D_n86gc")
+
+[node name="garden_gate_l" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_0vp4k")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_a31fu")
+surface_material_override/1 = ExtResource("2_a31fu")
+
+[node name="garden_gate_l" type="StaticBody3D" parent="garden_gate_l"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="garden_gate_l/garden_gate_l"]
+shape = SubResource("ConvexPolygonShape3D_l0np4")
+
+[node name="Door_frame_003" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_qy7vb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_frame_003"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_frame_003/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_a31fu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_anv2r")
+}

@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://3mqkpdruvj3i"]
+
+[ext_resource type="Script" uid="uid://bjw6rps3fpa2v" path="res://ui/mainmenu/options.gd" id="1_n6rmd"]
+[ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://resources/team & stylebox/hover_button.tres" id="1_veupt"]
+[ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://resources/team & stylebox/normal_button.tres" id="2_n6rmd"]
+
+[sub_resource type="Theme" id="Theme_qdka0"]
+Button/styles/hover = ExtResource("1_veupt")
+Button/styles/normal = ExtResource("2_n6rmd")
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6rmd")
+metadata/_edit_lock_ = true
+
+[node name="Option_list" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -68.0
+offset_right = 121.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resolution" type="HBoxContainer" parent="Option_list"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Option_list/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="resolution_button" type="OptionButton" parent="Option_list/Resolution"]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "480p"
+popup/item_0/id = 0
+popup/item_1/text = "720p"
+popup/item_1/id = 1
+popup/item_2/text = "1080p"
+popup/item_2/id = 2
+
+[node name="Display mode" type="HBoxContainer" parent="Option_list"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Option_list/Display mode"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Display mode"
+
+[node name="Full_Window_Checkbutton" type="CheckButton" parent="Option_list/Display mode"]
+layout_mode = 2
+text = "on/off"
+
+[node name="Vsync" type="HBoxContainer" parent="Option_list"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Option_list/Vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vsync"
+
+[node name="Vsync_CheckButton" type="CheckButton" parent="Option_list/Vsync"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="Option_list"]
+layout_mode = 2
+theme = SubResource("Theme_qdka0")
+text = "Back"
+
+[connection signal="item_selected" from="Option_list/Resolution/resolution_button" to="." method="_on_resolution_button_item_selected"]
+[connection signal="toggled" from="Option_list/Display mode/Full_Window_Checkbutton" to="." method="_on_display_mode_checkbutton_toggled"]
+[connection signal="toggled" from="Option_list/Vsync/Vsync_CheckButton" to="." method="_on_vsync_check_button_toggled"]
+[connection signal="pressed" from="Option_list/back" to="." method="_on_back_pressed"]

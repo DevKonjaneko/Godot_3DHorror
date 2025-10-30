@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce6px0mhvkp2e"]
+
+[ext_resource type="Script" uid="uid://5jsjs2g87vny" path="res://Scene/note_s/task_trigger.gd" id="1_hu1mn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y81uw"]
+
+[node name="task_trigger" type="Area3D"]
+script = ExtResource("1_hu1mn")
+task_text = "เควสต่อไป"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_y81uw")
+debug_color = Color(1, 1, 1, 1)
+
+[connection signal="area_entered" from="." to="." method="enter_trigger"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://iwdttu0pigyu"]
+
+[ext_resource type="Script" uid="uid://k64iou5kiu8t" path="res://UI/mainmenu/control.gd" id="1_2h5c5"]
+[ext_resource type="StyleBox" path="res://resources/team & stylebox/hover_button.tres" id="2_2h5c5"]
+[ext_resource type="StyleBox" path="res://resources/team & stylebox/normal_button.tres" id="3_b6irw"]
+
+[sub_resource type="Theme" id="Theme_6brao"]
+Button/styles/hover = ExtResource("2_2h5c5")
+Button/styles/normal = ExtResource("3_b6irw")
+
+[node name="control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2h5c5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -103.5
+offset_right = 71.0
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Forward" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Forward"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Backward"
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Left"
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Right"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Crosshair" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Crosshair"]
+layout_mode = 2
+text = "Crosshair"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VBoxContainer/Crosshair"]
+layout_mode = 2
+
+[node name="crosshair_textures" type="TextureRect" parent="VBoxContainer/VBoxContainer/Crosshair/CenterContainer"]
+layout_mode = 2
+
+[node name="Scale" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/Scale"]
+layout_mode = 2
+text = "Scale"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer/Scale"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6brao")
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/Scale/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=4 uid="uid://d2wk07ilogsn2"]
+
+[ext_resource type="Script" uid="uid://cmgoig72jt5md" path="res://Scene/interact_s/light_switch.gd" id="1_ekrhu"]
+[ext_resource type="Texture2D" uid="uid://b04k7cbtsey5w" path="res://Textures/surface/Plastic_06.jpg" id="2_wvxdx"]
+[ext_resource type="AudioStream" uid="uid://bpwjifp4gb0f5" path="res://Assets/sounds/light-switch.wav" id="3_c6omx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_llxfn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnmd3"]
+albedo_texture = ExtResource("2_wvxdx")
+roughness = 0.3
+roughness_texture = ExtResource("2_wvxdx")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c6omx"]
+_surfaces = [{
+"aabb": AABB(-0.5202073, -0.5202073, -0.5202073, 1.0404146, 1.0404146, 1.0404146),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("TiwFv04sBT9OLAU/TiwFP04sBT9OLAW/TiwFP04sBT9OLAU/TiwFv04sBT9OLAW/TiwFv04sBb9OLAU/TiwFP04sBb9OLAW/TiwFP04sBb9OLAU/TiwFv04sBb9OLAW/TiwFP04sBT9OLAU/TiwFv04sBT9OLAW/TiwFP04sBT9OLAW/TiwFv04sBT9OLAU/TiwFP04sBb9OLAU/TiwFv04sBb9OLAW/TiwFP04sBb9OLAW/TiwFv04sBb9OLAU/TiwFP04sBT9OLAU/TiwFv04sBb9OLAU/TiwFv04sBT9OLAU/TiwFP04sBb9OLAU/TiwFP04sBT9OLAW/TiwFv04sBb9OLAW/TiwFv04sBT9OLAW/TiwFP04sBb9OLAW//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5l85"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsrmb"]
+albedo_texture = ExtResource("2_wvxdx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6omx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llxfn"]
+size = Vector3(0.19, 0.315, 0.175)
+
+[node name="light_switch" type="Node3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("1_ekrhu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.13, 0, 0, 0, 0.25, 0, 0, 0, 0.025, 0, 0, 0)
+mesh = SubResource("BoxMesh_llxfn")
+surface_material_override/0 = SubResource("StandardMaterial3D_fnmd3")
+
+[node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+mesh = SubResource("ArrayMesh_c6omx")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5l85")
+
+[node name="off" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.084672, 0, 0, 0, 0.19473064, -0.012174842, 0, 0.052177913, 0.04543713, 0, 0, 0.00805483)
+visible = false
+material_override = SubResource("StandardMaterial3D_lsrmb")
+mesh = SubResource("BoxMesh_llxfn")
+surface_material_override/0 = SubResource("StandardMaterial3D_fnmd3")
+
+[node name="on" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.084672, 0, 0, 0, 0.19473062, 0.012174842, 0, -0.052177917, 0.045437127, 0, 0, 0.008302342)
+mesh = SubResource("BoxMesh_llxfn")
+surface_material_override/0 = SubResource("StandardMaterial3D_c6omx")
+
+[node name="light_switch" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="light_switch"]
+shape = SubResource("BoxShape3D_llxfn")
+
+[node name="LightSwitch" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_c6omx")

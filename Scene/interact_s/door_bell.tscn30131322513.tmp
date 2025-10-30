@@ -1,0 +1,177 @@
+[gd_scene load_steps=15 format=4 uid="uid://bo6x72022pvbb"]
+
+[ext_resource type="Script" uid="uid://ctcs5llvp06kp" path="res://Scene/interact_s/door_bell.gd" id="1_we7b5"]
+[ext_resource type="AudioStream" uid="uid://rdh1uexampgb" path="res://Assets/sounds/AntiqueDoorBellRing.mp3" id="2_rvghc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d457f"]
+resource_name = "Light_switch"
+cull_mode = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l7kq4"]
+_surfaces = [{
+"aabb": AABB(-0.016712282, -0.09603787, -0.055251412, 0.020490438, 0.19207574, 0.110502824),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwAEAAIAAAAFAAEABQADAAEABQAAAAYABwAEAAMABQAHAAMABwAGAAQABQAGAAcA"),
+"name": "Light_switch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD//wAAAAD+/wAAAAAAAAAAAAAAAAAA//8AAP//AAAAAAAA//8AAP7///8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6gimm"]
+resource_name = "Door_bell_Light_switch_013"
+_surfaces = [{
+"aabb": AABB(-0.016712282, -0.09603787, -0.055251412, 0.020490438, 0.19207574, 0.110502824),
+"attribute_data": PackedByteArray("Z+It8FH0245n4tuOUfQt8P9//////wl//38Jf/////9R9C3wZ+LbjlH0245n4i3wUfSFo2fig9tR9IPbZ+KFo1H0g9tn4oWjUfSFo2fig9s="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_d457f"),
+"name": "Light_switch",
+"primitive": 3,
+"uv_scale": Vector4(1.9999998, 2.0151072, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAD//wAA/n/+/wAAAAD+fwAAAAAAAP5//v///wAA/n/+////AAD/P///AAD///8//v8AAAAA/z//////////P///////////AAAAAP///////wAA/////wAA/////////v///wAA/z8AAP//////P/////////8/AAD//wAA/z///wAA////vwAAAAAAAP+//v8AAAAA/78AAAAA////v/9/////f////3////9/////f////3/+//9//v//f///////f/7//3/+//9/////fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_l7kq4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we7b5"]
+cull_mode = 1
+albedo_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjjwi"]
+resource_name = "Material"
+cull_mode = 2
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_212gg"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0uhp7"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("CAACAAEAAAABAAIAAAAHAAEACQAAAAIACAAJAAIACgAHAAAACQAKAAAACwABAAcACwAIAAEACgALAAcAAwAJAAgAAwAEAAkABAAKAAkABQADAAgABQAIAAsABAAGAAoABgAFAAsABgALAAoA"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABAAAAAIABQADAAEABAAGAAAABgAFAAcABQABAAcABgAHAAAAAAAHAAEA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAAAAAAAAAAAAP//AAD//wAA//8AAAAAAAD///////8AAAAA/3///wAAAAD/fwAAAAD///9/AAAAAP///3///wAA")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAA//8AAP//AAAAAAAAAAAAAP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wrqrb"]
+resource_name = "Door_bell_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X/9//5//P/+f/3//X/8//1//v/+f/3//n/+//1//f/9f////n/+//5////9f/7//f////3//v/9//7//f/9//3//f/9//z//f/8//38AAA=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("FAARABIAFAAVABEAEAAVABQAEAATABUAFgANAA4AFgAXAA0ADAAXABYADAAPABcAGAAJAAoAGAAZAAkACAAZABgACAALABkAGgAFAAYAGgAbAAUABAAbABoABAAHABsAAAABAAIAAAADAAEA"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA")],
+"material": SubResource("StandardMaterial3D_sjjwi"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////v///AAAAAFTV////////VNX/////AABU1f//AAD//1TVAAAAAAAA////////AAD//wAA//8AAP////8AAAAA//8AAAAA//9U1QAA//8AAFTVAAD/////VNUAAAAAAABU1QAA/3///1TVAAD/fwAAVNUAAP9/AAD//////38AAP//////fwAAVNX///9///9U1f///3////+/AAD/f////7//f/+//3//v/9//7//f/+//////////////////////6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/VNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTV/7//v/+//7+qKqoqqiqqKv//////////")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray("/x//f/9f/z//X/9//x//Pw=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_212gg"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///78AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0uhp7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_we7b5"]
+size = Vector3(0.1, 0.25, 0.175)
+
+[sub_resource type="Animation" id="Animation_we7b5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Switch_button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0031403392, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6rtmh"]
+resource_name = "press"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Switch_button:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.010666391, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvghc"]
+_data = {
+&"RESET": SubResource("Animation_we7b5"),
+&"press": SubResource("Animation_6rtmh")
+}
+
+[node name="Door_bell" type="Node3D"]
+script = ExtResource("1_we7b5")
+
+[node name="Light_switch" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_6gimm")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_we7b5")
+
+[node name="Switch_button" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.015520689, 0, 0, 0, 0.06687325, 0, 0, 0, 0.03332191, 0.0031403392, 0, 0)
+mesh = SubResource("ArrayMesh_wrqrb")
+skeleton = NodePath("")
+
+[node name="door_bell" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_bell"]
+shape = SubResource("BoxShape3D_we7b5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rvghc")
+}
+
+[node name="AntiqueDoorBellRing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rvghc")
+volume_db = -5.0

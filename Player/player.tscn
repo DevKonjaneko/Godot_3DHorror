@@ -1,0 +1,511 @@
+[gd_scene load_steps=52 format=3 uid="uid://cr16qvxkng034"]
+
+[ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
+[ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
+[ext_resource type="AudioStream" uid="uid://cvveech5nhu3l" path="res://Assets/sounds/Footstep_Walk.mp3" id="2_pisgm"]
+[ext_resource type="Script" uid="uid://cuo8250tj6eca" path="res://Player/fp_camera.gd" id="2_x3vf3"]
+[ext_resource type="Script" uid="uid://d1eklw33buvw1" path="res://Inventory/ItemData.gd" id="3_05jue"]
+[ext_resource type="AudioStream" uid="uid://c8s1bvm5dpik6" path="res://Assets/sounds/Footstep_Sprint.mp3" id="3_7emwf"]
+[ext_resource type="Script" uid="uid://djbk3306m6ehb" path="res://Player/player_interact.gd" id="3_p5o4e"]
+[ext_resource type="AudioStream" uid="uid://ct0cw4h8mohiq" path="res://Assets/sounds/Heartbeat_1.mp3" id="4_efx54"]
+[ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Scene/object_s/TestCube.tscn" id="4_g74hu"]
+[ext_resource type="Script" uid="uid://dtfsqjsb8eskv" path="res://Player/hand.gd" id="5_n471f"]
+[ext_resource type="Texture2D" uid="uid://dmm2hx7m8xjq5" path="res://Textures/SphereIcon.png" id="6_mu7kc"]
+[ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Scene/object_s/TestSphere.tscn" id="7_xsqkg"]
+[ext_resource type="PackedScene" uid="uid://dp5q7p76jwn7a" path="res://UI/hud/task_ui.tscn" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://cg8ggpore0g04" path="res://Inventory/InventoryHandler.gd" id="8_81rhn"]
+[ext_resource type="PackedScene" uid="uid://ch1kc3ssvcr6m" path="res://UI/hud/crosshair.tscn" id="9_apopc"]
+[ext_resource type="PackedScene" uid="uid://dcb2gmc4jn4eg" path="res://UI/mainmenu/pause_menu.tscn" id="10_5htga"]
+[ext_resource type="Texture2D" uid="uid://tmpxjj65ogpa" path="res://Textures/icons/Battery.png" id="12_n471f"]
+[ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="12_o28un"]
+[ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="13_n471f"]
+[ext_resource type="Texture2D" uid="uid://bgc6j4bmpchrn" path="res://Textures/icons/Key.png" id="15_76lrf"]
+[ext_resource type="Script" uid="uid://cxe0qf28btywk" path="res://Player/player_ui.gd" id="16_7emwf"]
+[ext_resource type="PackedScene" uid="uid://1wmf11s0kx41" path="res://Scene/object_s/Door_key.tscn" id="16_efx54"]
+[ext_resource type="Shader" uid="uid://xe3w7kqi8snw" path="res://Resources/shaders/new_shader.gdshader" id="16_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://d0at5lsw7nrp8" path="res://icon.svg" id="18_8viyr"]
+[ext_resource type="Script" uid="uid://bqxsq5o16d3mv" path="res://Scene/note_s/note_ui.gd" id="18_n471f"]
+[ext_resource type="Texture2D" uid="uid://gurwdofi7oat" path="res://Textures/questions/oldpage.png" id="20_hshwv"]
+[ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
+[ext_resource type="Script" uid="uid://c03fuduvybtcy" path="res://Player/pc_screen_ui.gd" id="22_8viyr"]
+[ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
+[ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/death_screen.tscn" id="27_755ss"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_656tx"]
+radius = 0.125
+
+[sub_resource type="SphereMesh" id="SphereMesh_00tjw"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="Resource" id="Resource_qmlov"]
+script = ExtResource("3_05jue")
+ItemName = "TestCube"
+Icon = ExtResource("12_o28un")
+ItemModelPrefab = ExtResource("4_g74hu")
+
+[sub_resource type="Resource" id="Resource_eff87"]
+script = ExtResource("3_05jue")
+ItemName = "TestSphere"
+Icon = ExtResource("6_mu7kc")
+ItemModelPrefab = ExtResource("7_xsqkg")
+
+[sub_resource type="Resource" id="Resource_n471f"]
+script = ExtResource("3_05jue")
+Type = 1
+Consumable_value = 50.0
+Item_Effect = "recharge_battery"
+ItemName = "Battery"
+Icon = ExtResource("12_n471f")
+ItemModelPrefab = ExtResource("13_n471f")
+metadata/_custom_type_script = "uid://d1eklw33buvw1"
+
+[sub_resource type="Resource" id="Resource_8viyr"]
+script = ExtResource("3_05jue")
+Type = 2
+ItemName = "DoorKey"
+Icon = ExtResource("15_76lrf")
+ItemModelPrefab = ExtResource("16_efx54")
+metadata/_custom_type_script = "uid://d1eklw33buvw1"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
+radius = 1.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_755ss"]
+bg_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbimk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_i4o1l"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_755ss")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_bbimk")
+
+[sub_resource type="Theme" id="Theme_pisgm"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 7
+
+[sub_resource type="Theme" id="Theme_qemgg"]
+
+[sub_resource type="Theme" id="Theme_sm0op"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_m0h3t"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_76lrf"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_efx54"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_755ss"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_bbimk"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="Theme" id="Theme_8viyr"]
+Button/styles/hover = ExtResource("21_8mwp6")
+Button/styles/normal = ExtResource("22_qemgg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pisgm"]
+shader = ExtResource("16_lfmf2")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.10000000475
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 1.0000000475
+shader_parameter/roll_variation = 0.75000003236512
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.1250000059375
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.10000000475
+shader_parameter/aberration = 0.00700004783250007
+shader_parameter/brightness = 0.65
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.55
+shader_parameter/vignette_opacity = 0.950000045125
+
+[node name="PlayerBody" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_lqs8g")
+
+[node name="Footstep_Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pisgm")
+max_distance = 1500.0
+
+[node name="Footstep_Sprint" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7emwf")
+
+[node name="Heartbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_efx54")
+volume_db = -10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
+mesh = SubResource("CapsuleMesh_jqxt5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_656tx")
+
+[node name="CameraContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_x3vf3")
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraContainer" node_paths=PackedStringArray("pc_ui")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.045, 0)
+target_position = Vector3(0, -3, 0)
+collision_mask = 3
+script = ExtResource("3_p5o4e")
+pc_ui = NodePath("../../player_ui/PlayerUI/pc_screen_ui")
+
+[node name="Camera3D" type="Camera3D" parent="CameraContainer"]
+transform = Transform3D(1, 0, 0, 0, 1.0000005, 0, 0, 0, 1.0000005, 0, 0, 0)
+cull_mask = 786431
+
+[node name="hand" type="Node3D" parent="CameraContainer"]
+script = ExtResource("5_n471f")
+battery_bar_path = NodePath("../../player_ui/PlayerUI/ProgressBar")
+
+[node name="ref_position" type="MeshInstance3D" parent="CameraContainer/hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+visible = false
+mesh = SubResource("SphereMesh_00tjw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraContainer/hand"]
+light_color = Color(0.98039216, 0.78431374, 0.6862745, 1)
+light_energy = 5.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 20.0
+spot_angle = 35.0
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_kykvu")
+ItemTypes = Array[ExtResource("3_05jue")]([SubResource("Resource_qmlov"), SubResource("Resource_eff87"), SubResource("Resource_n471f"), SubResource("Resource_8viyr")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_kv1ul")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="player_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_7emwf")
+
+[node name="PlayerUI" type="CanvasLayer" parent="player_ui"]
+
+[node name="ProgressBar" type="ProgressBar" parent="player_ui/PlayerUI"]
+offset_left = 128.0
+offset_top = 104.0
+offset_right = 320.0
+offset_bottom = 120.0
+theme = SubResource("Theme_i4o1l")
+value = 50.0
+show_percentage = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -20.0
+offset_right = 53.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crosshair" parent="player_ui/PlayerUI/VBoxContainer" instance=ExtResource("9_apopc")]
+layout_mode = 2
+
+[node name="interaction_label" type="Label" parent="player_ui/PlayerUI/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_pisgm")
+theme_override_colors/font_shadow_color = Color(0.8476528, 0.8476528, 0.8476528, 1)
+theme_override_font_sizes/font_size = 20
+text = "[E] Interact"
+
+[node name="pc_screen_ui" type="Control" parent="player_ui/PlayerUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_8viyr")
+
+[node name="Background" type="ColorRect" parent="player_ui/PlayerUI/pc_screen_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.9019608)
+
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/pc_screen_ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -260.0
+offset_right = 425.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI/pc_screen_ui/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -105.0
+offset_right = 64.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_8viyr")
+
+[node name="Label" type="Label" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+text = "User - kc12398545"
+
+[node name="LineEdit" type="LineEdit" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_qemgg")
+placeholder_text = "Enter Password"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Enter" type="Button" parent="player_ui/PlayerUI/pc_screen_ui/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_sm0op")
+text = "Enter"
+
+[node name="Back" type="Button" parent="player_ui/PlayerUI/pc_screen_ui/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_top = 23.0
+offset_right = -25.0
+offset_bottom = 52.0
+grow_horizontal = 0
+theme = SubResource("Theme_m0h3t")
+theme_override_font_sizes/font_size = 20
+text = "[X]"
+
+[node name="note_ui" type="Control" parent="player_ui/PlayerUI"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_n471f")
+
+[node name="ColorRect" type="ColorRect" parent="player_ui/PlayerUI/note_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.78431374)
+
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/note_ui/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -270.0
+offset_right = 220.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("20_hshwv")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -61.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="button1" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_76lrf")
+text = "1."
+
+[node name="button2" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_efx54")
+text = "2."
+
+[node name="button3" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_755ss")
+text = "3."
+
+[node name="button4" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_bbimk")
+text = "4."
+
+[node name="Back" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8viyr")
+text = "[x] close"
+
+[node name="InventoryUI" type="Control" parent="player_ui/PlayerUI" node_paths=PackedStringArray("PlayerBody", "FlashlightNode", "InventoryGrid")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_81rhn")
+PlayerBody = NodePath("../../..")
+CollisionMask = 1
+FlashlightNode = NodePath("../../../CameraContainer/hand")
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+
+[node name="Panel" type="Panel" parent="player_ui/PlayerUI/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -328.0
+offset_right = 414.0
+offset_bottom = -43.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="player_ui/PlayerUI/InventoryUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="player_ui/PlayerUI/InventoryUI/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5
+
+[node name="Death_screen" parent="player_ui/PlayerUI" instance=ExtResource("27_755ss")]
+visible = false
+
+[node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
+material = SubResource("ShaderMaterial_pisgm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="task_ui" parent="player_ui/PlayerUI" groups=["task_manager"] instance=ExtResource("8_00tjw")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="pause_menu" parent="player_ui/PlayerUI" instance=ExtResource("10_5htga")]
+visible = false
+
+[connection signal="OnItemPickedUp" from="InteractionArea" to="player_ui/PlayerUI/InventoryUI" method="PickupItem"]
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]
+[connection signal="pressed" from="player_ui/PlayerUI/pc_screen_ui/Panel/Back" to="player_ui/PlayerUI/pc_screen_ui" method="_on_back_pressed"]

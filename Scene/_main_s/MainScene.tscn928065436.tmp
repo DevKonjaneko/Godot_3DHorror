@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://dit5fjgxvvysf"]
+
+[ext_resource type="PackedScene" uid="uid://bl0h3mi0qhq4f" path="res://Scene/_main_s/Village.tscn" id="1_c6k8p"]
+[ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/player.tscn" id="2_csiqh"]
+[ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Scene/object_s/TestSphere.tscn" id="3_kqf6j"]
+[ext_resource type="PackedScene" uid="uid://r61bfbf25gcy" path="res://Scene/note_s/Note.tscn" id="3_mbwnc"]
+[ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Scene/object_s/TestCube.tscn" id="4_e41yp"]
+[ext_resource type="PackedScene" uid="uid://b76niexsnwx45" path="res://UI/effects/transitionscreen.tscn" id="4_mbwnc"]
+[ext_resource type="PackedScene" uid="uid://cql47emoguxmu" path="res://Scene/object_s/Battery.tscn" id="6_csiqh"]
+[ext_resource type="PackedScene" uid="uid://ce6px0mhvkp2e" path="res://Scene/note_s/task_trigger.tscn" id="7_kqf6j"]
+[ext_resource type="PackedScene" uid="uid://1wmf11s0kx41" path="res://Scene/object_s/Door_key.tscn" id="9_1f7mq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm7g"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_bottom_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.1
+
+[sub_resource type="Sky" id="Sky_7yd8q"]
+sky_material = SubResource("ProceduralSkyMaterial_xdm7g")
+
+[sub_resource type="Environment" id="Environment_mtw86"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_7yd8q")
+ambient_light_sky_contribution = 0.3
+ambient_light_energy = 0.4
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.78431374, 0.78431374, 0.78431374, 1)
+volumetric_fog_emission = Color(0.19607843, 0.3137255, 0.47058824, 1)
+volumetric_fog_emission_energy = 0.3
+volumetric_fog_sky_affect = 0.3
+
+[node name="TestScene" type="Node3D"]
+
+[node name="transitionscreen" parent="." instance=ExtResource("4_mbwnc")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mtw86")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660253, -0.4330129, 0.2500001, 0, 0.49999994, 0.86602545, -0.50000024, 0.74999994, -0.43301257, 0, 22.168022, 0)
+light_energy = 0.25
+shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_split_1 = 0.05
+directional_shadow_blend_splits = true
+
+[node name="Village" parent="." instance=ExtResource("1_c6k8p")]
+transform = Transform3D(1.75, 0, 0, 0, 1.25, 0, 0, 0, 1.75, 0.05319023, 0.062162638, -0.022448063)
+
+[node name="Note2" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.082951, 0.792318, -9.416071)
+note_text = "“นายอาจหนีฉันได้… แต่หนีผลของการกระทำในโลกดิจิทัลไม่ได้หรอก”
+บทเรียนสำคัญของเกมนี้คืออะไร?
+1.ใช้เทคโนโลยีอย่างมีสติและรับผิดชอบ
+2. กลัวผีไว้ก่อน
+3. ไม่กดลิ้งค์เด็ดขาด
+4. ปิดอินเทอร์เน็ตตลอดเวลา"
+font_size = 25
+
+[node name="Note" parent="." instance=ExtResource("3_mbwnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.641976, 1.2245024, -3.2895124)
+note_text = "2.ส่งลิ้งค์มา… แต่นายไม่เช็กเลยสินะ…”ควรทำอย่างไรก่อนกดลิ้งค์ที่ได้รับจากคนรู้จัก?
+ 1. กดทันที
+ 2. ตรวจสอบความถูกต้องของ URL
+ 3. แชร์ต่อ
+ 4. เปิดในโหมดลับ"
+font_size = 25
+
+[node name="task_trigger" parent="." instance=ExtResource("7_kqf6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -5)
+
+[node name="Battery" parent="." instance=ExtResource("6_csiqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8078115, 0.6131738, 0.27270618)
+
+[node name="ItemTestCube" parent="." instance=ExtResource("4_e41yp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16850662, 0.6131738, 0.27270618)
+
+[node name="ItemTestCube2" parent="." instance=ExtResource("3_kqf6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9736045, 0.6131738, 0.27270618)
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_csiqh")]
+transform = Transform3D(0.99713516, 0, -0.07564013, 0, 1, 0, 0.07564013, 0, 0.99713516, 3.3195176, 1.7671404, 1.0258665)
+
+[node name="Door_key" parent="." instance=ExtResource("9_1f7mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.218976, 0.9024025, 0)
