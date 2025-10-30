@@ -10,12 +10,12 @@ func _physics_process(_delta: float) -> void:
 		var hit = get_collider()
 		
 		#Battery
-		if hit.name == "Battery":
+		if hit.is_in_group("Battery"):
 			if global_position.distance_to(hit.global_position) <= 5.0:
 				if hit.has_method("on_focus"):
 					hit.on_focus()
-				interaction_label.text = "[E] Pick-up"
-				interaction_label.show()
+					interaction_label.text = "[E] Pick-up"
+					interaction_label.show()
 				if Input.is_action_just_pressed("Interact"):
 					# ส่ง Signal ไปให้ Inventory
 					var interaction_area = get_parent().get_parent().get_node("InteractionArea")
@@ -28,6 +28,16 @@ func _physics_process(_delta: float) -> void:
 					printerr("Item not found in ItemTypes")
 			else:
 				interaction_label.hide()
+				
+		#Doorkey
+		if hit.name == "Door_key":
+			if hit.has_method("on_focus"):
+				hit.on_focus()
+			interaction_label.text = "[E] Pick-up"
+			interaction_label.show()
+			if Input.is_action_just_pressed("Interact"):
+				hit.interact()
+				print("Key")
 		
 		#Door
 		if hit.name == "door_static":
@@ -99,15 +109,6 @@ func _physics_process(_delta: float) -> void:
 				hit.interact()
 				print("Read Note")
 
-		#Doorkey
-		elif hit.name == "Door_key":
-			if hit.has_method("on_focus"):
-				hit.on_focus()
-			interaction_label.text = "[E] Pick-up"
-			interaction_label.show()
-			if Input.is_action_just_pressed("Interact"):
-				hit.interact()
-				print("Key")
 		#Pc
 		elif hit.is_in_group("PC"):
 			interaction_label.text = "[E] Interact"
@@ -116,7 +117,7 @@ func _physics_process(_delta: float) -> void:
 				print("Used Pc")
 				if pc_ui:
 					pc_ui.show_ui()
-				
+		#Refrigerator
 		elif hit.name == "Refrigerator_U_D":
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()
@@ -129,7 +130,7 @@ func _physics_process(_delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				hit.get_parent().get_parent().toggle_lower_door()
 				print("Open")
-				
+		#Closet_door
 		elif hit.name == ("closet_door_l"):
 			interaction_label.text = "[E] Interact"
 			interaction_label.show()

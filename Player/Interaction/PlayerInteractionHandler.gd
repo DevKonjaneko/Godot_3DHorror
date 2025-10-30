@@ -3,9 +3,9 @@ signal OnItemPickedUp(item)
 @export var ItemTypes : Array[ItemData] = []
 var NearbyBodies : Array[InteractableItem]
 
-func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("Interact")):
-		PickupNearestItem()
+#func _input(event: InputEvent) -> void:
+	#if (event.is_action_pressed("Interact")):
+		#PickupNearestItem()
 
 func PickupNearestItem():
 	var nearestItem : InteractableItem = null
