@@ -2,6 +2,9 @@ extends RayCast3D
 @onready var interaction_label = get_parent().get_parent().get_node("player_ui/PlayerUI/VBoxContainer/interaction_label")
 @export var pc_ui: PCLoginScreen
 
+#Test เก็บ Object ที่ถูก Focus ครั้งก่อน
+#var currently_focused_object = null
+
 func _ready():
 	interaction_label.hide()
 
@@ -9,6 +12,16 @@ func _physics_process(_delta: float) -> void:
 
 	if is_colliding():	#เช็คว่า RayCast ชนอะไรอยู่หรือไม่
 		var hit = get_collider()
+		#Test ⭐เรียก GainFocus ถ้ามีฟังก์ชัน
+		#if hit != currently_focused_object:
+		# ปิด Focus ของ Object เดิม
+			#if currently_focused_object != null and currently_focused_object.has_method("LoseFocus"):
+				#currently_focused_object.LoseFocus()
+			# เปิด Focus ของ Object ใหม่
+			#if hit.has_method("GainFocus"):
+				#hit.GainFocus()
+			#currently_focused_object = hit
+			
 		#Door
 		if hit.name == "door_static":
 			var door_script = hit.get_parent().get_parent().get_parent()
@@ -129,6 +142,12 @@ func _physics_process(_delta: float) -> void:
 
 	else: #ถ้าไม่ได้ชนอะไรเลย → ให้ซ่อน Label
 		interaction_label.hide()
+		
+		#Test ⭐ ปิด Focus ของ Object ที่มองอยู่ก่อนหน้า
+		#if currently_focused_object != null:
+			#if currently_focused_object.has_method("LoseFocus"):
+				#currently_focused_object.LoseFocus()
+			#currently_focused_object = null
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("ui_cancel") and pc_ui and pc_ui.visible:

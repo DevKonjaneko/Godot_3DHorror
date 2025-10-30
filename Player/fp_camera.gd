@@ -1,12 +1,12 @@
 extends Node3D
 #@onready var camera = $Camera3D
-var sensitivity: float = 0.025
+var sensitivity: float = 0.016
 
 #ตัวแปรที่เกี่ยวกับระบบซูมแบบ Toggle
 var is_zoomed_in: bool = false #ตัวแปรช่วยจำสถานะการซูม เริ่มต้นคือยังไม่ซูม
 @onready var camera = $Camera3D
-@export var default_fov   = 75.0   #ค่า FOV ปกติ
-@export var zoomed_in_fov = 35.0 #ค่า FOV ตอนซูม
+@export var default_fov   = 75.0  #ค่า FOV ปกติ
+@export var zoomed_in_fov = 35.0  #ค่า FOV ตอนซูม
 @export var zoom_duration = 0.75  #ความเร็วในการซูม
 
 func _ready():

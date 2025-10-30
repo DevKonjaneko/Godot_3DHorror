@@ -112,7 +112,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if door:
 		if door.has_method(\"close_door\"):
 			door.close_door()
-			print(\"Closed: \", door.name)
+			#print(\"Closed: \", door.name)
 		else:
 			print(\"❌ Door doesn't have close_door()\")
 	else:

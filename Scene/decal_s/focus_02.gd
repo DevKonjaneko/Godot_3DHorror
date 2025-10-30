@@ -1,4 +1,4 @@
-extends Node3D
+extends Node3D # light v1.1
 @export var is_on: bool = true
 @export var light_node: OmniLight3D
 @export var mesh_node: MeshInstance3D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=52 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://epdku2hra5hg" path="res://Player/PlayerController.gd" id="1_lqs8g"]
 [ext_resource type="Script" uid="uid://qn3t3ahltood" path="res://Player/Interaction/PlayerInteractionHandler.gd" id="2_kykvu"]
@@ -29,6 +29,7 @@
 [ext_resource type="StyleBox" uid="uid://drb4jb5uwpbil" path="res://Resources/team & stylebox/hover_button.tres" id="21_8mwp6"]
 [ext_resource type="Script" uid="uid://c03fuduvybtcy" path="res://Player/pc_screen_ui.gd" id="22_8viyr"]
 [ext_resource type="StyleBox" uid="uid://b7ibnlkli38o" path="res://Resources/team & stylebox/normal_button.tres" id="22_qemgg"]
+[ext_resource type="PackedScene" uid="uid://do725yshq5xcn" path="res://UI/effects/death_screen.tscn" id="27_755ss"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -72,19 +73,17 @@ metadata/_custom_type_script = "uid://d1eklw33buvw1"
 [sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
 radius = 1.5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n471f"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(1, 1, 1, 1)
-shadow_size = 5
-shadow_offset = Vector2(5, 5)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_755ss"]
+bg_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 3
 
-[sub_resource type="Theme" id="Theme_n471f"]
-ProgressBar/font_sizes/font_size = 20
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_n471f")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbimk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_i4o1l"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_755ss")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_bbimk")
 
 [sub_resource type="Theme" id="Theme_pisgm"]
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
@@ -133,16 +132,16 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/roll_size = 1.0000000475
 shader_parameter/roll_variation = 0.75000003236512
 shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.10000000475
+shader_parameter/noise_opacity = 0.1250000059375
 shader_parameter/noise_speed = 1.0
-shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.00100004754750004
+shader_parameter/static_noise_intensity = 0.10000000475
+shader_parameter/aberration = 0.00700004783250007
 shader_parameter/brightness = 0.65
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.45
-shader_parameter/vignette_opacity = 0.750000035625
+shader_parameter/vignette_intensity = 0.55
+shader_parameter/vignette_opacity = 0.950000045125
 
 [node name="PlayerBody" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_lqs8g")
@@ -219,12 +218,12 @@ script = ExtResource("16_7emwf")
 [node name="PlayerUI" type="CanvasLayer" parent="player_ui"]
 
 [node name="ProgressBar" type="ProgressBar" parent="player_ui/PlayerUI"]
-offset_left = 40.0
-offset_top = 56.0
-offset_right = 192.0
-offset_bottom = 72.0
-theme = SubResource("Theme_n471f")
-value = 100.0
+offset_left = 128.0
+offset_top = 104.0
+offset_right = 320.0
+offset_bottom = 120.0
+theme = SubResource("Theme_i4o1l")
+value = 50.0
 show_percentage = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="player_ui/PlayerUI"]
@@ -411,25 +410,25 @@ grow_vertical = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="1" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+[node name="button1" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_76lrf")
 text = "1."
 
-[node name="2" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+[node name="button2" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_efx54")
 text = "2."
 
-[node name="3" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+[node name="button3" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_755ss")
 text = "3."
 
-[node name="4" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+[node name="button4" type="Button" parent="player_ui/PlayerUI/note_ui/ColorRect/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_bbimk")
@@ -484,6 +483,9 @@ size_flags_horizontal = 4
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 5
+
+[node name="Death_screen" parent="player_ui/PlayerUI" instance=ExtResource("27_755ss")]
+visible = false
 
 [node name="CRT_Filter" type="ColorRect" parent="player_ui/PlayerUI"]
 material = SubResource("ShaderMaterial_pisgm")
